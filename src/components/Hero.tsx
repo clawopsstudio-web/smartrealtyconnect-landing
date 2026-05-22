@@ -18,7 +18,7 @@ export default function Hero() {
   return (
     <section className="cream-surface relative overflow-hidden pt-24">
       <div className="mx-auto grid max-w-7xl gap-14 px-5 pb-20 pt-8 sm:px-6 lg:grid-cols-[1.06fr_0.94fr] lg:px-8 lg:pb-28 lg:pt-12">
-        <div>
+        <div className="reveal is-visible">
           <div className="mb-9 flex items-center gap-3">
             <span className="h-px w-9 bg-[#191816]" />
             <span className="section-label text-xs font-semibold text-[#3d352c]">
@@ -52,7 +52,7 @@ export default function Hero() {
 
           <div className="mt-9 grid max-w-2xl gap-3 sm:grid-cols-3">
             {proofCards.map((card) => (
-              <div key={card.label} className={`border-l-4 ${card.accent} rounded-r-lg border-y border-r border-[#ded2bd] bg-[#fffaf0] p-3 shadow-sm sm:p-4`}>
+              <div key={card.label} className={`hover-lift border-l-4 ${card.accent} rounded-r-lg border-y border-r border-[#ded2bd] bg-[#fffaf0] p-3 shadow-sm sm:p-4`}>
                 <div className="flex items-baseline gap-3 sm:block">
                   <p className="font-editorial text-2xl italic text-[#123763]">{card.value}</p>
                   <p className="mt-1 font-semibold text-[#191816]">{card.label}</p>
@@ -80,13 +80,13 @@ export default function Hero() {
         </div>
 
         <div className="relative">
-          <div className="mx-auto max-w-md rounded-[2rem] border border-[#e4d7c1] bg-[#fffaf0] p-6 shadow-2xl shadow-[#8f7f61]/20">
+          <div className="motion-card mx-auto max-w-md rounded-[2rem] border border-[#e4d7c1] bg-[#fffaf0] p-6 shadow-2xl shadow-[#8f7f61]/20">
             <div className="flex items-center justify-between gap-4">
               <div>
                 <p className="text-sm text-[#5a5044]">Daily listing summary</p>
                 <h2 className="mt-1 text-xl font-bold text-[#191816]">Somerset open house</h2>
               </div>
-              <span className="rounded-full bg-[#d8a547]/20 px-3 py-1 text-sm font-semibold text-[#7b5b1d]">
+              <span className="motion-pulse rounded-full bg-[#d8a547]/20 px-3 py-1 text-sm font-semibold text-[#7b5b1d]">
                 Today
               </span>
             </div>
@@ -111,7 +111,7 @@ export default function Hero() {
 
             <div className="mt-5 space-y-3">
               {summaryItems.map((item) => (
-                <div key={item.task} className="flex items-center justify-between gap-4 rounded-xl border border-[#e8dac3] bg-[#f7efe0] p-4">
+                <div key={item.task} className="motion-row flex items-center justify-between gap-4 rounded-xl border border-[#e8dac3] bg-[#f7efe0] p-4">
                   <div>
                     <p className="text-xs font-semibold text-[#6b5d4a]">{item.time}</p>
                     <p className="mt-1 font-semibold text-[#191816]">{item.task}</p>

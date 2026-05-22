@@ -17,7 +17,7 @@ const reportItems = [
 
 export default function Testimonials() {
   return (
-    <section className="bg-[#fffaf0] py-24">
+    <section className="reveal bg-[#fffaf0] py-24">
       <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
         <div className="rounded-[2rem] border border-[#ded2bd] bg-[#f7efe0] p-6 sm:p-10">
           <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">

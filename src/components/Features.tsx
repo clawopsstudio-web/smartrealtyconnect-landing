@@ -35,7 +35,7 @@ const services = [
 
 export default function Features() {
   return (
-    <section id="features" className="bg-[#fffaf0] py-24">
+    <section id="features" className="reveal bg-[#fffaf0] py-24">
       <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
         <div className="mb-16 grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-end">
           <div>
@@ -51,7 +51,7 @@ export default function Features() {
 
         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
           {services.map((service) => (
-            <div key={service.title} className="group rounded-2xl border border-[#ded2bd] bg-[#f7efe0] p-6 transition duration-300 hover:-translate-y-1 hover:bg-[#191816] hover:shadow-2xl hover:shadow-[#8f7f61]/20">
+            <div key={service.title} className="hover-lift group rounded-2xl border border-[#ded2bd] bg-[#f7efe0] p-6 duration-300 hover:bg-[#191816] hover:shadow-2xl hover:shadow-[#8f7f61]/20">
               <div className="mb-8 inline-flex rounded-full border border-[#d8a547] px-3 py-1 text-sm font-semibold text-[#7b5b1d] group-hover:border-white/20 group-hover:text-[#f7efe0]">
                 {service.proof}
               </div>

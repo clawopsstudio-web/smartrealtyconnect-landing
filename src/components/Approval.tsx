@@ -10,7 +10,7 @@ const approvalItems = [
 
 export default function Approval() {
   return (
-    <section className="cream-surface py-24">
+    <section className="reveal cream-surface py-24">
       <div className="mx-auto grid max-w-7xl gap-12 px-5 sm:px-6 lg:grid-cols-[1fr_0.9fr] lg:px-8 lg:items-center">
         <div>
           <p className="section-label text-xs font-semibold text-[#123763]">You stay in control</p>

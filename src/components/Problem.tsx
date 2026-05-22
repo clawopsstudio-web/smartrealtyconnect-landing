@@ -21,7 +21,7 @@ const pains = [
 
 export default function Problem() {
   return (
-    <section className="bg-[#fffaf0] py-24">
+    <section className="reveal bg-[#fffaf0] py-24">
       <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
         <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr]">
           <div>
@@ -36,7 +36,7 @@ export default function Problem() {
 
           <div className="grid gap-4 sm:grid-cols-2">
             {pains.map((pain, index) => (
-              <div key={pain.title} className="rounded-2xl border border-[#e4d7c1] bg-[#f7efe0] p-6 transition hover:-translate-y-1 hover:shadow-xl hover:shadow-[#8f7f61]/10">
+              <div key={pain.title} className="hover-lift rounded-2xl border border-[#e4d7c1] bg-[#f7efe0] p-6 hover:shadow-xl hover:shadow-[#8f7f61]/10">
                 <p className="font-editorial text-3xl italic text-[#123763]">0{index + 1}</p>
                 <h3 className="mt-5 text-xl font-bold text-[#191816]">{pain.title}</h3>
                 <p className="mt-3 leading-7 text-[#5a5044]">{pain.description}</p>

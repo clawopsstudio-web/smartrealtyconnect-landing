@@ -9,7 +9,7 @@ const outcomes = [
 
 export default function Stats() {
   return (
-    <section className="cream-surface border-y border-[#e4d7c1] py-16">
+    <section className="reveal cream-surface border-y border-[#e4d7c1] py-16">
       <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
         <div className="grid gap-8 lg:grid-cols-[0.78fr_1.22fr] lg:items-end">
           <div>
@@ -21,7 +21,7 @@ export default function Stats() {
 
           <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
             {outcomes.map((item) => (
-              <div key={item.label} className="rounded-xl border border-[#ded2bd] bg-[#fffaf0] p-4 shadow-sm transition hover:-translate-y-1 hover:shadow-lg">
+              <div key={item.label} className="hover-lift rounded-xl border border-[#ded2bd] bg-[#fffaf0] p-4 shadow-sm hover:shadow-lg">
                 <p className="font-editorial text-4xl italic text-[#123763]">{item.value}</p>
                 <p className="mt-2 font-bold text-[#191816]">{item.label}</p>
                 <p className="mt-2 text-sm leading-5 text-[#5a5044]">{item.detail}</p>

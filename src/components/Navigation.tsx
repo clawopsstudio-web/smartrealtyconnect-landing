@@ -33,7 +33,7 @@ export default function Navigation() {
             <a href="#blog" className="text-[#3d352c] hover:text-[#123763] transition font-medium">Blog</a>
             <a href="#pricing" className="text-[#3d352c] hover:text-[#123763] transition font-medium">Pricing</a>
             <a href="#book" className="rounded-full bg-[#191816] px-6 py-3 font-semibold text-white shadow-xl shadow-black/15 transition hover:-translate-y-0.5 hover:bg-[#123763]">
-              Get buyer report
+              Book strategy call
             </a>
           </div>
 
@@ -60,7 +60,7 @@ export default function Navigation() {
               <a href="#features" onClick={() => setMobileOpen(false)} className="text-[#3d352c] hover:text-[#123763] transition font-medium">What it handles</a>
               <a href="#blog" onClick={() => setMobileOpen(false)} className="text-[#3d352c] hover:text-[#123763] transition font-medium">Blog</a>
               <a href="#pricing" onClick={() => setMobileOpen(false)} className="text-[#3d352c] hover:text-[#123763] transition font-medium">Pricing</a>
-              <a href="#book" onClick={() => setMobileOpen(false)} className="rounded-full bg-[#191816] px-6 py-3 text-center font-semibold text-white">Get buyer report</a>
+              <a href="#book" onClick={() => setMobileOpen(false)} className="rounded-full bg-[#191816] px-6 py-3 text-center font-semibold text-white">Book strategy call</a>
             </div>
           </div>
         )}

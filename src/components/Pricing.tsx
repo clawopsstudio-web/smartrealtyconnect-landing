@@ -43,7 +43,7 @@ const plans = [
 
 export default function Pricing() {
   return (
-    <section id="pricing" className="bg-[#191816] py-24 text-white">
+    <section id="pricing" className="reveal bg-[#191816] py-24 text-white">
       <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
         <div className="mb-14 max-w-3xl">
           <p className="section-label text-xs font-semibold text-[#d8a547]">Plans</p>
@@ -57,7 +57,7 @@ export default function Pricing() {
 
         <div className="grid gap-5 lg:grid-cols-3">
           {plans.map((plan) => (
-            <div key={plan.name} className={`rounded-2xl border p-6 ${plan.featured ? 'border-[#d8a547] bg-[#fffaf0] text-[#191816]' : 'border-white/15 bg-white/5'}`}>
+            <div key={plan.name} className={`hover-lift rounded-2xl border p-6 ${plan.featured ? 'border-[#d8a547] bg-[#fffaf0] text-[#191816]' : 'border-white/15 bg-white/5'}`}>
               {plan.featured && (
                 <div className="mb-5 inline-flex rounded-full bg-[#d8a547] px-3 py-1 text-sm font-bold text-[#191816]">
                   Most complete

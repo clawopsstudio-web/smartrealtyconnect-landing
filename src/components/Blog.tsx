@@ -20,7 +20,7 @@ const posts = [
 
 export default function Blog() {
   return (
-    <section id="blog" className="bg-[#fffaf0] py-24">
+    <section id="blog" className="reveal bg-[#fffaf0] py-24">
       <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
         <div className="mb-12 flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
           <div>
@@ -36,7 +36,7 @@ export default function Blog() {
 
         <div className="grid gap-4 md:grid-cols-3">
           {posts.map((post) => (
-            <article key={post.title} className="rounded-2xl border border-[#ded2bd] bg-[#f7efe0] p-6 transition hover:-translate-y-1 hover:shadow-xl hover:shadow-[#8f7f61]/10">
+            <article key={post.title} className="hover-lift rounded-2xl border border-[#ded2bd] bg-[#f7efe0] p-6 hover:shadow-xl hover:shadow-[#8f7f61]/10">
               <p className="text-sm font-semibold text-[#123763]">{post.category}</p>
               <h3 className="mt-5 text-2xl font-bold leading-tight text-[#191816]">{post.title}</h3>
               <p className="mt-4 leading-7 text-[#5a5044]">{post.description}</p>

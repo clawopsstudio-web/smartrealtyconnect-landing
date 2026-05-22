@@ -11,10 +11,12 @@ import Blog from '@/components/Blog';
 import FAQ from '@/components/FAQ';
 import CTA from '@/components/CTA';
 import Footer from '@/components/Footer';
+import ScrollAnimations from '@/components/ScrollAnimations';
 
 export default function Home() {
   return (
     <main className="min-h-screen">
+      <ScrollAnimations />
       <Navigation />
       <Hero />
       <Stats />

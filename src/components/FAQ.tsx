@@ -33,7 +33,7 @@ export default function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <section id="faq" className="cream-surface py-24">
+    <section id="faq" className="reveal cream-surface py-24">
       <div className="mx-auto max-w-4xl px-5 sm:px-6 lg:px-8">
         <div className="mb-12 text-center">
           <p className="section-label text-xs font-semibold text-[#123763]">Questions</p>
