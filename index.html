@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartRealtyConnect - AI Buyer & Seller Discovery for Real Estate Agents</title>
+    <meta name="description" content="Find qualified buyers and sellers automatically. No cold calls. Just leads.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * { font-family: 'Inter', sans-serif; }
+        html { scroll-behavior: smooth; }
+        .gradient-text { background: linear-gradient(135deg, #1E3A5F, #60A5FA); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .fade-in { animation: fadeIn 0.8s ease-out; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        .card-hover { transition: transform 0.3s, box-shadow 0.3s; }
+        .card-hover:hover { transform: translateY(-4px); box-shadow: 0 20px 40px rgba(30, 58, 95, 0.15); }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800">
+
+    <!-- Nav -->
+    <nav class="fixed w-full bg-white/90 backdrop-blur-md z-50 border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center gap-2">
+                <div class="w-10 h-10 bg-gradient-to-br from-blue-900 to-blue-400 rounded-xl flex items-center justify-center">
+                    <span class="text-white font-bold text-lg">S</span>
+                </div>
+                <span class="font-bold text-xl text-blue-900">SmartRealtyConnect</span>
+            </div>
+            <div class="flex items-center gap-6">
+                <a href="#features" class="hidden md:block text-slate-600 hover:text-blue-600 transition">Features</a>
+                <a href="#pricing" class="hidden md:block text-slate-600 hover:text-blue-600 transition">Pricing</a>
+                <a href="#faq" class="hidden md:block text-slate-600 hover:text-blue-600 transition">FAQ</a>
+                <a href="#contact" class="bg-amber-500 hover:bg-amber-600 text-white px-5 py-2.5 rounded-lg font-semibold transition">Book Demo</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="pt-32 pb-20 px-6">
+        <div class="max-w-5xl mx-auto text-center fade-in">
+            <span class="inline-block bg-blue-100 text-blue-700 px-4 py-1.5 rounded-full text-sm font-medium mb-6">AI-Powered Lead Discovery</span>
+            <h1 class="text-4xl md:text-6xl font-bold leading-tight mb-6">
+                We Find Buyers & Sellers For Your Listings<br>
+                <span class="gradient-text">While You Close Deals</span>
+            </h1>
+            <p class="text-xl text-slate-600 max-w-2xl mx-auto mb-10">
+                AI-powered buyer & seller discovery for real estate agents. No cold calls. No expensive lead platforms. Just qualified leads delivered daily.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#contact" class="bg-blue-900 hover:bg-blue-800 text-white px-8 py-4 rounded-xl font-semibold text-lg transition shadow-lg shadow-blue-900/20">Get Your First Lead Report</a>
+                <a href="#how" class="border-2 border-slate-300 hover:border-blue-500 text-slate-700 px-8 py-4 rounded-xl font-semibold text-lg transition">See How It Works</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats -->
+    <section class="bg-blue-900 text-white py-12">
+        <div class="max-w-6xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+            <div>
+                <div class="text-4xl font-bold mb-2">50+</div>
+                <div class="text-blue-200">Agents Using Platform</div>
+            </div>
+            <div>
+                <div class="text-4xl font-bold mb-2">10+</div>
+                <div class="text-blue-200">Leads Per Agent Monthly</div>
+            </div>
+            <div>
+                <div class="text-4xl font-bold mb-2">15hrs</div>
+                <div class="text-blue-200">Saved Weekly</div>
+            </div>
+            <div>
+                <div class="text-4xl font-bold mb-2">30%</div>
+                <div class="text-blue-200">More Closings</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem -->
+    <section class="py-20 px-6">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-8">Tired of Cold Calling & Expensive Leads That Don't Convert?</h2>
+            <div class="grid md:grid-cols-2 gap-6 text-left mt-12">
+                <div class="bg-red-50 border border-red-100 rounded-2xl p-6">
+                    <div class="text-red-600 font-semibold mb-3">Buying leads that don't respond</div>
+                    <p class="text-slate-600">Generic leads from platforms everyone else uses. No competitive edge.</p>
+                </div>
+                <div class="bg-red-50 border border-red-100 rounded-2xl p-6">
+                    <div class="text-red-600 font-semibold mb-3">Spending hours on unqualified prospects</div>
+                    <p class="text-slate-600">Time wasted chasing people who aren't ready to buy or sell.</p>
+                </div>
+                <div class="bg-red-50 border border-red-100 rounded-2xl p-6">
+                    <div class="text-red-600 font-semibold mb-3">Missing motivated buyers hiding in plain sight</div>
+                    <p class="text-slate-600">Real opportunities in Reddit, forums, and public data you don't have time to find.</p>
+                </div>
+                <div class="bg-red-50 border border-red-100 rounded-2xl p-6">
+                    <div class="text-red-600 font-semibold mb-3">No time for actual closing</div>
+                    <p class="text-slate-600">All your time spent on prospecting, none on what you do best: closing deals.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solution -->
+    <section id="how" class="py-20 bg-slate-100">
+        <div class="max-w-5xl mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-4">Your AI Team Works 24/7 Finding Buyers & Sellers</h2>
+            <p class="text-slate-600 text-center mb-16 max-w-2xl mx-auto">Four simple steps to fill your pipeline with qualified prospects</p>
+            <div class="grid md:grid-cols-4 gap-6">
+                <div class="bg-white rounded-2xl p-6 text-center card-hover">
+                    <div class="w-12 h-12 bg-blue-100 rounded-xl mx-auto mb-4 flex items-center justify-center text-blue-600 font-bold text-xl">1</div>
+                    <h3 class="font-semibold mb-2">Submit Listing</h3>
+                    <p class="text-slate-600 text-sm">Share your listing details, price range, and target buyer/seller types</p>
+                </div>
+                <div class="bg-white rounded-2xl p-6 text-center card-hover">
+                    <div class="w-12 h-12 bg-amber-100 rounded-xl mx-auto mb-4 flex items-center justify-center text-amber-600 font-bold text-xl">2</div>
+                    <h3 class="font-semibold mb-2">AI Discovers</h3>
+                    <p class="text-slate-600 text-sm">Our AI scans Reddit, forums, public records, and social signals</p>
+                </div>
+                <div class="bg-white rounded-2xl p-6 text-center card-hover">
+                    <div class="w-12 h-12 bg-green-100 rounded-xl mx-auto mb-4 flex items-center justify-center text-green-600 font-bold text-xl">3</div>
+                    <h3 class="font-semibold mb-2">Review Report</h3>
+                    <p class="text-slate-600 text-sm">Get qualified prospects with contact info and outreach scripts</p>
+                </div>
+                <div class="bg-white rounded-2xl p-6 text-center card-hover">
+                    <div class="w-12 h-12 bg-purple-100 rounded-xl mx-auto mb-4 flex items-center justify-center text-purple-600 font-bold text-xl">4</div>
+                    <h3 class="font-semibold mb-2">Close Deals</h3>
+                    <p class="text-slate-600 text-sm">Spend time on conversations that convert, not lead generation</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section id="features" class="py-20 px-6">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-4">Everything You Need to Fill Your Pipeline</h2>
+            <p class="text-slate-600 text-center mb-16 max-w-2xl mx-auto">Three powerful modules working together</p>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-slate-50 rounded-2xl p-8">
+                    <div class="w-14 h-14 bg-blue-100 rounded-2xl mb-6 flex items-center justify-center">
+                        <svg class="w-7 h-7 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-6a4 4 0 00-3.2V9m0 0l-4 4m4-4l4 4M3 9v11a3 3 0 003 3h18a3 3 0 003-3V9m-6 4l-4 4m4-4l4-4m-8 6a4 4 0 01-3.2V20"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Buyer Discovery</h3>
+                    <ul class="space-y-2 text-slate-600 text-sm">
+                        <li>• Intent signals from Reddit, forums, social media</li>
+                        <li>• First-time buyer identification</li>
+                        <li>• Relocation & investor discovery</li>
+                        <li>• Pre-qualified prospect profiles</li>
+                    </ul>
+                </div>
+                <div class="bg-slate-50 rounded-2xl p-8">
+                    <div class="w-14 h-14 bg-amber-100 rounded-2xl mb-6 flex items-center justify-center">
+                        <svg class="w-7 h-7 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2.45 2.45q.22-.54 3.55-.45t3.55.45L15 15m-1-6l5.55-5.45q.22-.54 3.55-.45t3.55.45M21 12l-4-4m4 4l-4 4m-9-5a4 4 0 01-3.2V20"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Seller Leads</h3>
+                    <ul class="space-y-2 text-slate-600 text-sm">
+                        <li>• Expired listing opportunities</li>
+                        <li>• FSBO discovery</li>
+                        <li>• Equity extraction signals</li>
+                        <li>• Motivated seller identification</li>
+                    </ul>
+                </div>
+                <div class="bg-slate-50 rounded-2xl p-8">
+                    <div class="w-14 h-14 bg-green-100 rounded-2xl mb-6 flex items-center justify-center">
+                        <svg class="w-7 h-7 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M12 2a10 10 0 10020 0A10 10 0 012 12zm0 6h.01M12 18h.01M3 12a9 9 0 014-9 9 9 9 9 0 000 9z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Outreach Automation</h3>
+                    <ul class="space-y-2 text-slate-600 text-sm">
+                        <li>• Personalized email templates</li>
+                        <li>• Script generation for calls</li>
+                        <li>• Follow-up sequences</li>
+                        <li>• Calendar integration</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing -->
+    <section id="pricing" class="py-20 bg-slate-900 text-white">
+        <div class="max-w-6xl mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-4">Simple, Transparent Pricing</h2>
+            <p class="text-slate-400 text-center mb-12">No hidden fees. No long-term contracts. Cancel anytime.</p>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white/5 border border-white/10 rounded-2xl p-8">
+                    <h3 class="text-lg font-semibold mb-2">Starter</h3>
+                    <div class="text-4xl font-bold mb-1">$399<span class="text-lg font-normal text-slate-400">/mo</span></div>
+                    <p class="text-slate-400 text-sm mb-6">Perfect for solo agents</p>
+                    <ul class="space-y-3 mb-8 text-sm">
+                        <li class="flex items-center gap-2"><svg class="w-5 h-5 text-green-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 1.414l4-4 4 8-8zM12 2.293a1 1 0 000-1.414l8-8a1 1 0 000-1.414l-8 8a1 1 0 01-1.414 0l-8-8z"></path></svg> Buyer discovery</li>
+                        <li class="flex items-center gap-2"><svg class="w-5 h-5 text-green-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 1.414l4-4 4 8-8zM12 2.293a1 1 0 000-1.414l8-8a1 1 0 000-1.414l-8 8a1 1 0 01-1.414 0l-8-8z"></path></svg> Seller leads</li>
+                        <li class="flex items-center gap-2"><svg class="w-5 h-5 text-green-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 1.414l4-4 4 8-8zM12 2.293a1 1 0 000-1.414l8-8a1 1 0 000-1.414l-8 8a1 1 0 01-1.414 0l-8-8z"></path></svg> Email templates</li>
+                        <li class="flex items-center gap-2"><svg class="w-5 h-5 text-green-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 1.414l4-4 4 8-8zM12 2.293a1 1 0 000-1.414l8-8a1 1 0 000-1.414l-8 8a1 1 0 01-1.414 0l-8-8z"></path></svg> Monthly reports</li>
+                        <li class="flex items-center gap-2 text-slate-500"><svg class="w-5 h-5 text-slate-600" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414L10 10l-4.293 4.293a1 1 0 01-1.414-1.414L5.172 6.172a1 1 0 010 1.414l4 4m-8-8a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 01-1.414-1.414L5.172 6.172a1 1 0 010 1.414l4 4m-8-8a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 01-1.414-1.414L5.172 6.172a1 1 0 010 1.414l4 4m-8-8a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 01-1.414-1.414L5.172 6.172a1 1 0 010 1.414l4 4m-8-8a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 01-1.414-1.414L5.172 6.172a1 1 0 010 1.414l4 4m-8-8a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 01-1.414-1.414L5.172 6.172a1 1 0 010 1.414l4 4m-8-8a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 01-1.414-1.414L5.172 6.172a1 1 0 010 1.414l4 4m-8-8a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 01-1.414-1.414L5.172 6.172a1 1 0 010 1.414l4 4m-8-8a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 01-1.414-1.414L5.172 6.172a1 1 0 010 1.414l4 4m-8-8a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 01-1.414-1.414L5.172 6.172a1 1 0 010 1.414l4 4m-8-8a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 01-1.414-1.414L5.172 6.172a1 1 0 010 1.414l4 4m-8-8a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 01-1.414-1.414L5.172 6.172a1 1 0 010 1.414l4 4m-8-8a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 01-1.414-1.414L5.172 6.172a1 1 0 010 1.414l4 4m-8-8a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 01-1.414-1.414L5.172 6.172a1 1 0 010 1.414l4 4m-8-8a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 01-1.414-1.414L5.172 6.172a1 1 0 010 1.414l4 4m-8-8a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 01-1.414-1.414L5.172 6.172a1 1 0 010 1.414l4 4m-8-8a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 01-1.414-1.414L5.172 6.172a1 1 0 010 1.414l4 4m-8-8a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 01-1.414-1.414L5.172 6.172a1 1 0 010 1.414l4 4m-8-8a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 01-1.414-1.414L5.172 6.172a1 1 0 010 1.414l4 4m-8-8a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 01-1.414-1.414L5.172 6.172a1 1 0 010 1.414l4 4m-8-8a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 01-1.414-1.414L5.172 6.172a1 1 0 010 1.414l4 4m-8-8a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 01-1.414-1.414L5.172 6.172a1 1 0 010 1.414l4 4m-8-8a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 01-1.414-1.414L5.172 6.172a1 1 0 010 1.414l4 4m-8-8a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 01-1.414-1.414L5.172 6.172a1 1 0 010 1.414l4 4m-8-8a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 01-1.414-1.414L5.172 6.172a1 1 0 010 1.414l4 4m-8-8a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 01-1.414-1.414L5.172 6.172a1 1 0 010 1.414l4 4m-8-8a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 01-1.414-1.414L5.172 6.172a1 1 0 010 1.414l4 4m-8-8a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 01-1.414-1.414L5.172 6.172a1 1 0 010 1.414l4 4m-8-8a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 01-1.414-1.414L5.172 6.172a1 1 0 010 1.414l4 4m-8-8a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 01-1.414-1.414L5.172 6.172a1 1 0 010 1.414l4 4m-8-8a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 01-1.414-1.414L5.172 6.172a1 1 0 010 1.414l4 4m-8-8a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 01-1.414-1.414L5.172 6.172a1 1 0 010 1.414l4 4m-8-8a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 01-1.414-1.414L5.172 6.172a1 1 0 010 1.414l4 4m-8-8a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 01-1.414-1.414L5.172 6.172a1 1 0 010 1.414l4 4m-8-8a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 01-1.414-1.414L5.172 6.172a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 01-1.414-1.414L5.172 6.172a1 1 0 010 1.414l4 4m-8-8a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 01-1.414-1.414L5.172 6.172a1 1 0 010 1.414l4 4m-8-8a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 01-1.414-1.414L5.172 6.172a1 1 0 010 1.414l4 4m-8-8a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 01-1.414-1.414L5.172 6.172a1 1 0 010 1.414l4 4m-8-8a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 01-1.414-1.414L5.172 6.172a1 1 0 010 1.414l4 4m-8-8a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 01-1.414-1.414L5.172 6.172a1 1 0 010 1.414l4 4m-8-8a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 01-1.414-1.414L5.172 6.172a1 1 0 010 1.414l4 4m-8-8a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 01-1.414-1.414L5.172 6.172a1 1 0 010 1.414l4 4m-8-8a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 01-1.414-1.414L5.172 6.172a1 1 0 010 1.414l4 4m-8-8a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 01-1.414-1.414L5.172 6.172a1 1 0 010 1.414l4 4m-8-8a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 01-1.414-1.414L5.172 6.172a1 1 0 010 1.414l4 4m-8-8a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 01-1.414-1.414L5.172 6.172a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 01-1.414 1.414L5.172 6.172a1 1 0 010 1.414l4 4m-8-8a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 01-1.414-1.414L5.172 6.172a1 1 0 010 1.414l4 4m-8-8a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 01-1.414-1.414L5.172 6.172a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 01-1.414-1.414L5.172 6.172a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 01-1.414-1.414L5.172 6.172a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 01-1.414-1.414L5.172 6.172a1 1 0 010 1.414l4 4m-8-8a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 01-1.414-1.414L5.172 6.172a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 01-1.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 01-1.414-1.414L5.172 6.172a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 01-1.414 1.414L5.172 6.172a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 01-1.414-1.414L5.172 6.172a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 01-1.414-1.414L5.172 6.172a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 01-1.414-1.414L5.172 6.172a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0 011.414 1.414L10 10l-4.293 4.293a1 1 0
