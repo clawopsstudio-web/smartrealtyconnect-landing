@@ -1,100 +1,105 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
+const pipelineItems = [
+  { label: 'Buyer intent detected', detail: 'Moving in 60-90 days' },
+  { label: 'Seller signal matched', detail: 'High-equity homeowner' },
+  { label: 'Call booked', detail: 'Thursday, 3:30 PM' },
+];
 
 export default function Hero() {
-  const heroRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
-      if (!heroRef.current) return;
-      const rect = heroRef.current.getBoundingClientRect();
-      const x = (e.clientX - rect.left) / rect.width - 0.5;
-      const y = (e.clientY - rect.top) / rect.height - 0.5;
-      
-      const cards = heroRef.current.querySelectorAll('.float-card');
-      cards.forEach((card, i) => {
-        const factor = (i + 1) * 0.5;
-        (card as HTMLElement).style.transform = `translate(${x * factor * 20}px, ${y * factor * 20}px)`;
-      });
-    };
-
-    window.addEventListener('mousemove', handleMouseMove);
-    return () => window.removeEventListener('mousemove', handleMouseMove);
-  }, []);
-
   return (
-    <section ref={heroRef} className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-b from-slate-50 to-white pt-20">
-      {/* Background Elements */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute -top-40 -right-40 w-80 h-80 bg-blue-100 rounded-full blur-3xl opacity-60" />
-        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-amber-100 rounded-full blur-3xl opacity-60" />
-      </div>
+    <section className="relative overflow-hidden bg-[#f7f9fc] pt-20 md:pt-20">
+      <div className="mx-auto grid max-w-7xl items-center gap-12 px-5 pb-12 pt-6 sm:px-6 md:pb-16 lg:grid-cols-[1.04fr_0.96fr] lg:px-8 lg:pb-18">
+        <div className="mx-auto max-w-3xl text-center lg:mx-0 lg:text-left">
+          <div className="mb-6 inline-flex items-center gap-2 rounded-lg border border-blue-200 bg-white px-3 py-2 text-sm font-semibold text-blue-700 shadow-sm">
+            <span className="h-2 w-2 rounded-full bg-emerald-500" />
+            AI-powered lead discovery for real estate agents
+          </div>
 
-      {/* Floating Cards */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="float-card absolute top-32 left-[10%] w-48 h-32 bg-white rounded-2xl shadow-xl p-4 transition-transform duration-300 ease-out opacity-60">
-          <div className="text-2xl">🏠</div>
-          <div className="text-sm font-semibold text-slate-700">New Listing Alert</div>
-          <div className="text-xs text-slate-500">Sellers in your area</div>
-        </div>
-        <div className="float-card absolute top-40 right-[15%] w-56 h-36 bg-white rounded-2xl shadow-xl p-4 transition-transform duration-300 ease-out opacity-60">
-          <div className="text-2xl">👤</div>
-          <div className="text-sm font-semibold text-slate-700">Qualified Buyer Found</div>
-          <div className="text-xs text-slate-500">Pre-approved, ready to buy</div>
-        </div>
-        <div className="float-card absolute bottom-40 left-[15%] w-52 h-32 bg-white rounded-2xl shadow-xl p-4 transition-transform duration-300 ease-out opacity-60">
-          <div className="text-2xl">📈</div>
-          <div className="text-sm font-semibold text-slate-700">Deal Closed</div>
-          <div className="text-xs text-green-600">+1 Transaction</div>
-        </div>
-      </div>
+          <h1 className="text-balance text-4xl font-bold leading-[1.04] tracking-normal text-slate-950 sm:text-5xl md:text-6xl lg:text-7xl">
+            We find buyers and sellers while you close deals.
+          </h1>
 
-      {/* Main Content */}
-      <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
-        <div className="inline-flex items-center gap-2 bg-blue-100 text-blue-700 px-4 py-2 rounded-full text-sm font-medium mb-8 animate-bounce">
-          <span className="w-2 h-2 bg-blue-500 rounded-full" />
-          AI-Powered Lead Discovery
-        </div>
+          <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-slate-600 sm:text-xl lg:mx-0">
+            Stop chasing cold leads. SmartRealtyConnect identifies motivated prospects in your market, qualifies them, and turns interest into booked calls.
+          </p>
 
-        <h1 className="text-5xl md:text-7xl font-bold text-slate-900 mb-6 leading-tight">
-          We Find Buyers & Sellers
-          <br />
-          <span className="bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent">
-            While You Close Deals
-          </span>
-        </h1>
+          <div className="mt-9 flex flex-col items-stretch gap-3 sm:flex-row sm:items-center sm:justify-center lg:justify-start">
+            <a
+              href="#book"
+              className="inline-flex min-h-12 items-center justify-center rounded-lg bg-blue-700 px-6 py-3 text-base font-semibold text-white shadow-lg shadow-blue-700/20 transition hover:bg-blue-800"
+            >
+              Book free strategy call
+            </a>
+            <a
+              href="#how"
+              className="inline-flex min-h-12 items-center justify-center rounded-lg border border-slate-300 bg-white px-6 py-3 text-base font-semibold text-slate-800 transition hover:border-blue-300 hover:text-blue-700"
+            >
+              See how it works
+            </a>
+          </div>
 
-        <p className="text-xl md:text-2xl text-slate-600 max-w-2xl mx-auto mb-10 leading-relaxed">
-          Stop chasing cold leads. Our AI discovers motivated buyers and sellers in your market — and delivers them to your calendar.
-        </p>
-
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <a 
-            href="#book" 
-            className="group bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all shadow-xl shadow-blue-600/25 hover:shadow-blue-600/40 hover:-translate-y-0.5"
-          >
-            Book Your Free Strategy Call
-            <span className="inline-block ml-2 group-hover:translate-x-1 transition-transform">→</span>
-          </a>
-          <a 
-            href="#how" 
-            className="border-2 border-slate-300 hover:border-blue-400 text-slate-700 px-8 py-4 rounded-xl font-semibold text-lg transition-all hover:bg-slate-50"
-          >
-            See How It Works
-          </a>
+          <div className="mt-8 flex flex-col items-center gap-3 text-sm text-slate-500 sm:flex-row sm:justify-center lg:justify-start">
+            <div className="flex -space-x-2">
+              <span className="h-8 w-8 rounded-full border-2 border-white bg-slate-300" />
+              <span className="h-8 w-8 rounded-full border-2 border-white bg-blue-200" />
+              <span className="h-8 w-8 rounded-full border-2 border-white bg-amber-200" />
+            </div>
+            <span>Trusted by 50+ real estate agents across the US</span>
+          </div>
         </div>
 
-        <p className="mt-8 text-slate-500 text-sm">
-          Trusted by 50+ real estate agents across the US
-        </p>
-      </div>
+        <div className="relative mx-auto hidden w-full max-w-xl lg:block lg:max-w-none">
+          <div className="rounded-lg border border-slate-200 bg-white p-4 shadow-2xl shadow-slate-900/10 sm:p-5">
+            <div className="rounded-lg border border-slate-200 bg-slate-950 p-4 text-white">
+              <div className="flex items-center justify-between gap-4">
+                <div>
+                  <p className="text-sm text-slate-400">Lead engine</p>
+                  <p className="mt-1 text-xl font-semibold">Today&apos;s pipeline</p>
+                </div>
+                <div className="rounded-lg bg-emerald-500/15 px-3 py-2 text-sm font-semibold text-emerald-300">
+                  Live
+                </div>
+              </div>
 
-      {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-        <svg className="w-6 h-6 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-        </svg>
+              <div className="mt-6 grid grid-cols-3 gap-3">
+                <div className="rounded-lg bg-white/10 p-3">
+                  <p className="text-2xl font-bold">18</p>
+                  <p className="mt-1 text-xs text-slate-300">New prospects</p>
+                </div>
+                <div className="rounded-lg bg-white/10 p-3">
+                  <p className="text-2xl font-bold">7</p>
+                  <p className="mt-1 text-xs text-slate-300">Qualified</p>
+                </div>
+                <div className="rounded-lg bg-white/10 p-3">
+                  <p className="text-2xl font-bold">3</p>
+                  <p className="mt-1 text-xs text-slate-300">Calls booked</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="mt-4 space-y-3">
+              {pipelineItems.map((item) => (
+                <div key={item.label} className="flex items-center justify-between gap-4 rounded-lg border border-slate-200 bg-slate-50 p-4">
+                  <div>
+                    <p className="font-semibold text-slate-950">{item.label}</p>
+                    <p className="mt-1 text-sm text-slate-500">{item.detail}</p>
+                  </div>
+                  <span className="rounded-lg bg-blue-100 px-3 py-1 text-sm font-semibold text-blue-700">
+                    Ready
+                  </span>
+                </div>
+              ))}
+            </div>
+
+            <div className="mt-4 rounded-lg border border-amber-200 bg-amber-50 p-4">
+              <p className="text-sm font-semibold text-amber-900">Next best action</p>
+              <p className="mt-1 text-sm leading-6 text-amber-800">
+                Call Sarah M. about the Oak Ridge listing. Budget verified, wants a showing this weekend.
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );
