@@ -1,51 +1,109 @@
 'use client';
 
-const steps = [
-  {
-    number: '01',
-    title: 'Send the listing',
-    description: 'Paste the listing link, open house post, or property details. We pull out the facts, strengths, price angle, and likely buyer types.',
-  },
-  {
-    number: '02',
-    title: 'Get the opportunity map',
-    description: 'You receive ranked buyer and seller channels: buyer agents, investors, renter angles, relocation sources, and nearby homeowner opportunities.',
-  },
-  {
-    number: '03',
-    title: 'Approve the next actions',
-    description: 'Outreach drafts, call scripts, comments, and promo content are prepared for review. You decide what goes out.',
-  },
-  {
-    number: '04',
-    title: 'Wake up to the summary',
-    description: 'Replies, call notes, booked meetings, and content updates land in a simple report so you know what moved forward.',
-  },
-];
+import { motion, useInView } from 'framer-motion';
+import { useRef } from 'react';
 
 export default function HowItWorks() {
-  return (
-    <section id="how" className="reveal cream-surface py-24">
-      <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
-        <div className="mb-16 max-w-3xl">
-          <p className="section-label text-xs font-semibold text-[#123763]">How it works</p>
-          <h2 className="font-editorial mt-4 text-4xl leading-tight text-[#191816] sm:text-6xl">
-            Three minutes from listing upload to a working plan.
-          </h2>
-          <p className="mt-6 text-lg leading-8 text-[#5a5044]">
-            The system is built for busy agents. You give it the listing; it gives you the plan, drafts, and daily progress.
-          </p>
-        </div>
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
 
-        <div className="grid gap-4 lg:grid-cols-4">
-          {steps.map((step) => (
-            <div key={step.number} className="hover-lift rounded-2xl border border-[#ded2bd] bg-[#fffaf0] p-6 shadow-sm hover:shadow-xl hover:shadow-[#8f7f61]/10">
-              <p className="font-editorial text-5xl italic text-[#123763]">{step.number}</p>
-              <h3 className="mt-8 text-xl font-bold text-[#191816]">{step.title}</h3>
-              <p className="mt-4 leading-7 text-[#5a5044]">{step.description}</p>
-            </div>
+  const steps = [
+    {
+      number: '01',
+      icon: '🎯',
+      title: 'You upload a listing',
+      description: 'Drop a listing URL, paste property details, or share what you need buyers for. Takes 30 seconds.',
+    },
+    {
+      number: '02',
+      icon: '🤖',
+      title: 'AI maps buyer channels',
+      description: 'Your AI team scans Reddit, investor communities, REIA groups, and public data for people likely to want this property.',
+    },
+    {
+      number: '03',
+      icon: '✍️',
+      title: 'Outreach drafted for you',
+      description: 'Personalized messages are written and ready. You review and approve before anything goes out.',
+    },
+    {
+      number: '04',
+      icon: '📅',
+      title: 'Conversations booked',
+      description: 'Qualified leads book directly on your calendar. You show up, build rapport, close deals.',
+    },
+  ];
+
+  return (
+    <section ref={ref} id="how" className="bg-[#123763] py-24">
+      <div className="mx-auto max-w-6xl px-6">
+        <motion.div 
+          className="mb-16 text-center"
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6 }}
+        >
+          <span className="section-label text-xs font-semibold text-[#d8a547]">
+            How It Works
+          </span>
+          <h2 className="mt-4 font-editorial text-4xl md:text-5xl font-bold text-white">
+            From listing to booked conversations
+          </h2>
+          <p className="mt-6 text-xl text-blue-100 max-w-2xl mx-auto">
+            A simple process that replaces hours of cold calling with AI-powered discovery.
+          </p>
+        </motion.div>
+
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {steps.map((step, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 40 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.5, delay: index * 0.15 }}
+              className="relative"
+            >
+              {/* Connector Line */}
+              {index < steps.length - 1 && (
+                <div className="hidden lg:block absolute top-20 left-full w-full h-0.5 bg-gradient-to-r from-[#d8a547]/50 to-transparent z-0" />
+              )}
+              
+              <motion.div
+                whileHover={{ y: -8, scale: 1.02 }}
+                className="bg-white/10 backdrop-blur rounded-2xl p-8 border border-white/20 relative z-10 h-full"
+              >
+                <motion.div 
+                  className="text-5xl mb-4"
+                  animate={{ rotate: [0, 5, -5, 0] }}
+                  transition={{ duration: 3, repeat: Infinity, repeatDelay: 2 }}
+                >
+                  {step.icon}
+                </motion.div>
+                <div className="text-[#d8a547] font-bold text-sm mb-2">STEP {step.number}</div>
+                <h3 className="text-xl font-bold text-white mb-3">{step.title}</h3>
+                <p className="text-blue-100 leading-relaxed">{step.description}</p>
+              </motion.div>
+            </motion.div>
           ))}
         </div>
+
+        {/* CTA */}
+        <motion.div 
+          className="mt-16 text-center"
+          initial={{ opacity: 0 }}
+          animate={isInView ? { opacity: 1 } : {}}
+          transition={{ duration: 0.6, delay: 0.8 }}
+        >
+          <motion.a
+            href="#book"
+            whileHover={{ scale: 1.05, y: -2 }}
+            whileTap={{ scale: 0.98 }}
+            className="inline-flex items-center gap-2 rounded-full bg-[#d8a547] px-8 py-4 font-semibold text-[#191816] shadow-lg"
+          >
+            Get your free listing report
+            <span>→</span>
+          </motion.a>
+        </motion.div>
       </div>
     </section>
   );

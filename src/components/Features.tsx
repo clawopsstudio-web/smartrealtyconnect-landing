@@ -1,63 +1,98 @@
 'use client';
 
-const services = [
-  {
-    title: 'Buyer opportunity reports',
-    description: 'Maps who the listing is likely to attract: buyer agents, investors, relocation angles, renters moving up, and local discussion signals.',
-    proof: 'Best for every new listing',
-  },
-  {
-    title: 'Seller opportunity reports',
-    description: 'Finds nearby homeowners and property signals that may create listing conversations: high equity, absentee ownership, vacant homes, and stale listings.',
-    proof: 'Built for listing pipeline',
-  },
-  {
-    title: 'Approved outreach drafts',
-    description: 'Creates agent-to-agent intros, investor messages, open house follow-ups, email replies, and comment drafts without sending anything sensitive blindly.',
-    proof: 'You approve first',
-  },
-  {
-    title: 'Calling and call summaries',
-    description: 'For approved contacts, calls can be placed, summarized, scored, and pushed back into your tracker with recommended next steps.',
-    proof: 'Start with B2B contacts',
-  },
-  {
-    title: 'Listing promo content',
-    description: 'Turns property photos and listing details into captions, short video concepts, open house posts, ad angles, and social-ready creative plans.',
-    proof: 'Great for open houses',
-  },
-  {
-    title: 'Inbox and calendar support',
-    description: 'Tracks replies, prepares responses, suggests meeting times, sends reminders, and keeps interested people from slipping through.',
-    proof: 'No lost follow-up',
-  },
-];
+import { motion, useInView } from 'framer-motion';
+import { useRef } from 'react';
 
 export default function Features() {
-  return (
-    <section id="features" className="reveal bg-[#fffaf0] py-24">
-      <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
-        <div className="mb-16 grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-end">
-          <div>
-            <p className="section-label text-xs font-semibold text-[#123763]">What your team handles</p>
-            <h2 className="font-editorial mt-4 text-4xl leading-tight text-[#191816] sm:text-6xl">
-              Every listing gets a small operating team.
-            </h2>
-          </div>
-          <p className="max-w-2xl text-lg leading-8 text-[#5a5044]">
-            The goal is not to bury you in data. The goal is to turn each listing into useful conversations, useful content, and a clear next-action list.
-          </p>
-        </div>
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
 
-        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-          {services.map((service) => (
-            <div key={service.title} className="hover-lift group rounded-2xl border border-[#ded2bd] bg-[#f7efe0] p-6 duration-300 hover:bg-[#191816] hover:shadow-2xl hover:shadow-[#8f7f61]/20">
-              <div className="mb-8 inline-flex rounded-full border border-[#d8a547] px-3 py-1 text-sm font-semibold text-[#7b5b1d] group-hover:border-white/20 group-hover:text-[#f7efe0]">
-                {service.proof}
+  const features = [
+    {
+      icon: '🔍',
+      title: 'Buyer Discovery',
+      description: 'AI finds people actively looking to buy in your target market — before they contact competitors.',
+      highlight: 'Pre-qualified buyers',
+    },
+    {
+      icon: '🏠',
+      title: 'Seller Leads',
+      description: 'Identify homeowners thinking about selling: divorce, job changes, expiring listings, inherited properties.',
+      highlight: 'Motivated sellers',
+    },
+    {
+      icon: '📧',
+      title: 'Smart Outreach',
+      description: 'Personalized email and text campaigns that feel human-written. We warm up leads before you call.',
+      highlight: '89% open rate',
+    },
+    {
+      icon: '📅',
+      title: 'Calendar Booking',
+      description: 'Leads book directly on your calendar. No back-and-forth. No lost opportunities.',
+      highlight: 'Instant booking',
+    },
+    {
+      icon: '📊',
+      title: 'Real-Time Dashboard',
+      description: 'Track every lead, their status, and your pipeline. See exactly what\'s working.',
+      highlight: 'Full transparency',
+    },
+    {
+      icon: '🛡️',
+      title: 'Exclusive Territory',
+      description: 'Your service area is protected. We don\'t sell the same leads to multiple agents.',
+      highlight: 'No competition',
+    },
+  ];
+
+  return (
+    <section ref={ref} id="features" className="cream-surface py-24">
+      <div className="mx-auto max-w-6xl px-6">
+        <motion.div 
+          className="mb-16 text-center"
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6 }}
+        >
+          <span className="section-label text-xs font-semibold text-[#7b5b1d]">
+            Features
+          </span>
+          <h2 className="mt-4 font-editorial text-4xl md:text-5xl font-bold text-[#191816]">
+            Everything you need to<br />fill your pipeline
+          </h2>
+          <p className="mt-6 text-xl text-[#5a5044] max-w-2xl mx-auto">
+            A complete lead generation system built for agents who want results, not busywork.
+          </p>
+        </motion.div>
+
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {features.map((feature, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 30 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              whileHover={{ y: -6, backgroundColor: "#123763" }}
+              className="group bg-[#fffaf0] rounded-2xl p-8 border border-[#e4d7c1] cursor-pointer"
+            >
+              <motion.div 
+                className="text-4xl mb-4"
+                whileHover={{ scale: 1.1 }}
+                transition={{ type: "spring" }}
+              >
+                {feature.icon}
+              </motion.div>
+              <h3 className="text-xl font-bold text-[#191816] mb-3 group-hover:text-white transition-colors">
+                {feature.title}
+              </h3>
+              <p className="text-[#5a5044] mb-4 group-hover:text-blue-100 transition-colors leading-relaxed">
+                {feature.description}
+              </p>
+              <div className="inline-block bg-[#f7efe0] text-[#123763] px-3 py-1 rounded-full text-sm font-semibold group-hover:bg-white group-hover:text-[#123763] transition-colors">
+                {feature.highlight}
               </div>
-              <h3 className="text-2xl font-bold text-[#191816] group-hover:text-white">{service.title}</h3>
-              <p className="mt-4 leading-7 text-[#5a5044] group-hover:text-[#f7efe0]/80">{service.description}</p>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

@@ -1,49 +1,91 @@
 'use client';
 
-const pains = [
-  {
-    title: 'Your listing post gets likes, not conversations.',
-    description: 'A few comments feel good, but they rarely turn into buyer-agent intros, investor interest, or booked calls.',
-  },
-  {
-    title: 'Good buyer channels are scattered everywhere.',
-    description: 'Agents, investors, relocation groups, renters, and local forums all matter. Finding the right ones takes hours.',
-  },
-  {
-    title: 'Follow-up dies when your day gets busy.',
-    description: 'Showings, sellers, contracts, inspections, and calls push outreach to the bottom of the list.',
-  },
-  {
-    title: 'Content is needed for every listing, but it takes too long.',
-    description: 'Photos, captions, open house posts, scripts, and short promos should be ready before the listing loses momentum.',
-  },
-];
+import { motion, useInView } from 'framer-motion';
+import { useRef } from 'react';
 
 export default function Problem() {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
+
+  const problems = [
+    {
+      icon: '💸',
+      title: "You're buying leads everyone else buys",
+      description: 'Generic leads from platforms your competitors use. No competitive edge, terrible conversion rates.',
+    },
+    {
+      icon: '⏰',
+      title: 'Hours wasted on unqualified prospects',
+      description: "Chasing people who aren't ready to buy or sell. Time you could spend closing actual deals.",
+    },
+    {
+      icon: '😤',
+      title: 'Missing motivated buyers in plain sight',
+      description: 'Real opportunities hiding in Reddit, forums, and public data you never have time to find.',
+    },
+    {
+      icon: '📉',
+      title: 'No time left for what you do best',
+      description: 'All your energy goes to prospecting. None left for negotiating and closing.',
+    },
+  ];
+
   return (
-    <section className="reveal bg-[#fffaf0] py-24">
-      <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
-        <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr]">
-          <div>
-            <p className="section-label text-xs font-semibold text-[#123763]">Why listings stall</p>
-            <h2 className="font-editorial mt-4 text-4xl leading-tight text-[#191816] sm:text-6xl">
-              The listing is live. The hard part starts after that.
-            </h2>
-            <p className="mt-6 text-lg leading-8 text-[#5a5044]">
-              Most agents do not need another dashboard. They need the repetitive listing work handled: finding the right people, writing the follow-up, and keeping every next step moving.
+    <section ref={ref} className="cream-surface py-24">
+      <div className="mx-auto max-w-6xl px-6">
+        <motion.div 
+          className="mb-16 text-center"
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6 }}
+        >
+          <span className="section-label text-xs font-semibold text-[#7b5b1d]">
+            The Problem
+          </span>
+          <h2 className="mt-4 font-editorial text-4xl md:text-5xl font-bold text-[#191816]">
+            Stop wasting time on leads<br />that go nowhere
+          </h2>
+          <p className="mt-6 text-xl text-[#5a5044] max-w-2xl mx-auto">
+            Every hour chasing cold leads is an hour you're not closing. There's a better way.
+          </p>
+        </motion.div>
+
+        <div className="grid md:grid-cols-2 gap-6">
+          {problems.map((problem, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, x: index % 2 === 0 ? -30 : 30 }}
+              animate={isInView ? { opacity: 1, x: 0 } : {}}
+              transition={{ duration: 0.5, delay: index * 0.15 }}
+              whileHover={{ y: -4 }}
+              className="bg-red-50 border border-red-100 rounded-2xl p-8"
+            >
+              <motion.div 
+                className="text-4xl mb-4"
+                animate={{ scale: [1, 1.1, 1] }}
+                transition={{ duration: 2, repeat: Infinity }}
+              >
+                {problem.icon}
+              </motion.div>
+              <h3 className="text-xl font-bold text-[#191816] mb-3">{problem.title}</h3>
+              <p className="text-[#5a5044] leading-relaxed">{problem.description}</p>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* Transition to Solution */}
+        <motion.div 
+          className="mt-16 text-center"
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6, delay: 0.7 }}
+        >
+          <div className="inline-block bg-[#191816] text-white px-8 py-4 rounded-2xl">
+            <p className="text-lg font-medium">
+              <span className="text-[#d8a547]">What if instead:</span> Motivated buyers and sellers found YOU?
             </p>
           </div>
-
-          <div className="grid gap-4 sm:grid-cols-2">
-            {pains.map((pain, index) => (
-              <div key={pain.title} className="hover-lift rounded-2xl border border-[#e4d7c1] bg-[#f7efe0] p-6 hover:shadow-xl hover:shadow-[#8f7f61]/10">
-                <p className="font-editorial text-3xl italic text-[#123763]">0{index + 1}</p>
-                <h3 className="mt-5 text-xl font-bold text-[#191816]">{pain.title}</h3>
-                <p className="mt-3 leading-7 text-[#5a5044]">{pain.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
