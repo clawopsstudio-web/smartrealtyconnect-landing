@@ -2,80 +2,63 @@
 
 import { useState } from 'react';
 
-export default function FAQ() {
-  const [openIndex, setOpenIndex] = useState<number | null>(null);
+const faqs = [
+  {
+    question: 'Are you selling me leads?',
+    answer: 'No. We build opportunity reports and workflows around your listings. Some opportunities are direct leads, but many are channels: buyer agents, investors, renters moving up, seller signals, and follow-up tasks worth acting on.',
+  },
+  {
+    question: 'Will anything be sent without my approval?',
+    answer: 'No. Research, drafts, summaries, and tracking can run in the background. Outreach, calls, public comments, and social posts ask for approval first.',
+  },
+  {
+    question: 'What do I send you to get started?',
+    answer: 'A listing link, open house post, or property details. If you have photos, we can also prepare content ideas and promo drafts for that property.',
+  },
+  {
+    question: 'Is this for buyers or sellers?',
+    answer: 'Both. For each listing, we map buyer-side channels and seller-side opportunities so the property can create current conversations and future listing pipeline.',
+  },
+  {
+    question: 'How soon can I see something useful?',
+    answer: 'A first listing report can be prepared quickly. The ongoing value comes from repeating the workflow across every listing and following up consistently.',
+  },
+  {
+    question: 'Do I need to manage any software?',
+    answer: 'No. The service is packaged for agents. You get the reports, approvals, summaries, and booked next steps without managing the underlying tools.',
+  },
+];
 
-  const faqs = [
-    {
-      question: 'How is this different from other lead gen services?',
-      answer: 'Most lead gen services sell you the same leads they sell to every other agent. We use AI to find motivated buyers and sellers who haven\'t talked to any other agents yet — and we protect your territory so we won\'t sell them to your competitors.',
-    },
-    {
-      question: 'What if I don\'t get any good leads?',
-      answer: 'We qualify every lead before sending it to you. If a lead doesn\'t meet our criteria (motivated, timeline, budget), we don\'t send it. Our goal is quality over quantity. If you\'re not satisfied, we\'ll work with you to optimize your targeting.',
-    },
-    {
-      question: 'How quickly will I see results?',
-      answer: 'Most agents see their first qualified lead within 7-14 days. By day 30, you should have a clear picture of what\'s working. We provide weekly reports so you can track progress and optimize.',
-    },
-    {
-      question: 'Can I cancel anytime?',
-      answer: 'Yes. Month-to-month, no long-term contracts. Cancel before your next billing date and you won\'t be charged again. We don\'t lock you in because we\'re confident in our results.',
-    },
-    {
-      question: 'What areas do you cover?',
-      answer: 'We can find leads in any US market. The more specific your target area, the better our AI can focus. We recommend starting with 2-3 zip codes or neighborhoods for best results.',
-    },
-    {
-      question: 'Do you handle the outreach, or do I have to follow up?',
-      answer: 'We handle the initial outreach via email and SMS. We warm up the lead so they\'re expecting your call. You handle the consultation and close — the part that actually makes you money.',
-    },
-  ];
+export default function FAQ() {
+  const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <section id="faq" className="py-24 bg-white">
-      <div className="max-w-3xl mx-auto px-6">
-        <div className="text-center mb-16">
-          <span className="text-blue-600 font-semibold text-sm uppercase tracking-wider">FAQ</span>
-          <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mt-4 mb-6">
-            Questions?<br />We&apos;ve Got Answers.
+    <section id="faq" className="cream-surface py-24">
+      <div className="mx-auto max-w-4xl px-5 sm:px-6 lg:px-8">
+        <div className="mb-12 text-center">
+          <p className="section-label text-xs font-semibold text-[#123763]">Questions</p>
+          <h2 className="font-editorial mt-4 text-4xl leading-tight text-[#191816] sm:text-6xl">
+            What agents usually ask first.
           </h2>
         </div>
 
-        <div className="space-y-4">
+        <div className="space-y-3">
           {faqs.map((faq, index) => (
-            <div 
-              key={index}
-              className="border border-slate-200 rounded-xl overflow-hidden"
-            >
+            <div key={faq.question} className="overflow-hidden rounded-2xl border border-[#ded2bd] bg-[#fffaf0]">
               <button
                 onClick={() => setOpenIndex(openIndex === index ? null : index)}
-                className="w-full flex items-center justify-between p-6 text-left hover:bg-slate-50 transition-colors"
+                className="flex w-full items-center justify-between gap-4 p-6 text-left"
               >
-                <span className="font-semibold text-slate-900 pr-4">{faq.question}</span>
-                <svg 
-                  className={`w-5 h-5 text-slate-400 flex-shrink-0 transition-transform ${openIndex === index ? 'rotate-180' : ''}`}
-                  fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                >
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                </svg>
+                <span className="text-lg font-bold text-[#191816]">{faq.question}</span>
+                <span className="text-2xl text-[#123763]">{openIndex === index ? '−' : '+'}</span>
               </button>
               {openIndex === index && (
                 <div className="px-6 pb-6">
-                  <p className="text-slate-600 leading-relaxed">{faq.answer}</p>
+                  <p className="leading-7 text-[#5a5044]">{faq.answer}</p>
                 </div>
               )}
             </div>
           ))}
-        </div>
-
-        <div className="mt-12 text-center">
-          <p className="text-slate-600">
-            Still have questions?{' '}
-            <a href="#book" className="text-blue-600 font-semibold hover:underline">
-              Book a call and we&apos;ll answer them all.
-            </a>
-          </p>
         </div>
       </div>
     </section>

@@ -1,71 +1,62 @@
 'use client';
 
-export default function Features() {
-  const features = [
-    {
-      icon: '🔍',
-      title: 'Buyer Discovery',
-      description: 'AI finds people who are actively looking to buy in your target market — before they contact your competitors.',
-      highlight: 'Pre-qualified buyers',
-    },
-    {
-      icon: '🏠',
-      title: 'Seller Leads',
-      description: 'Identify homeowners thinking about selling: divorce situations, job changes, expiring listings, inherited properties.',
-      highlight: 'Motivated sellers',
-    },
-    {
-      icon: '📧',
-      title: 'Smart Outreach',
-      description: 'Personalized email and text campaigns that feel human-written. We warm up leads before they reach you.',
-      highlight: '89% open rate',
-    },
-    {
-      icon: '📅',
-      title: 'Calendar Integration',
-      description: 'Leads book directly on your calendar. No back-and-forth. No lost opportunities.',
-      highlight: 'Instant booking',
-    },
-    {
-      icon: '📊',
-      title: 'Real-Time Dashboard',
-      description: 'Track every lead, their status, and your pipeline. See exactly what\'s working.',
-      highlight: 'Full transparency',
-    },
-    {
-      icon: '🛡️',
-      title: 'Exclusive Territory',
-      description: 'Your service area is protected. We don\'t sell the same leads to multiple agents.',
-      highlight: 'No competition',
-    },
-  ];
+const services = [
+  {
+    title: 'Buyer opportunity reports',
+    description: 'Maps who the listing is likely to attract: buyer agents, investors, relocation angles, renters moving up, and local discussion signals.',
+    proof: 'Best for every new listing',
+  },
+  {
+    title: 'Seller opportunity reports',
+    description: 'Finds nearby homeowners and property signals that may create listing conversations: high equity, absentee ownership, vacant homes, and stale listings.',
+    proof: 'Built for listing pipeline',
+  },
+  {
+    title: 'Approved outreach drafts',
+    description: 'Creates agent-to-agent intros, investor messages, open house follow-ups, email replies, and comment drafts without sending anything sensitive blindly.',
+    proof: 'You approve first',
+  },
+  {
+    title: 'Calling and call summaries',
+    description: 'For approved contacts, calls can be placed, summarized, scored, and pushed back into your tracker with recommended next steps.',
+    proof: 'Start with B2B contacts',
+  },
+  {
+    title: 'Listing promo content',
+    description: 'Turns property photos and listing details into captions, short video concepts, open house posts, ad angles, and social-ready creative plans.',
+    proof: 'Great for open houses',
+  },
+  {
+    title: 'Inbox and calendar support',
+    description: 'Tracks replies, prepares responses, suggests meeting times, sends reminders, and keeps interested people from slipping through.',
+    proof: 'No lost follow-up',
+  },
+];
 
+export default function Features() {
   return (
-    <section id="features" className="py-24 bg-white">
-      <div className="max-w-6xl mx-auto px-6">
-        <div className="text-center mb-16">
-          <span className="text-amber-500 font-semibold text-sm uppercase tracking-wider">Features</span>
-          <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mt-4 mb-6">
-            Everything You Need to<br />
-            <span className="text-blue-600">Fill Your Pipeline</span>
-          </h2>
-          <p className="text-xl text-slate-600 max-w-2xl mx-auto">
-            A complete lead generation system built for real estate agents who want results, not busywork.
+    <section id="features" className="bg-[#fffaf0] py-24">
+      <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
+        <div className="mb-16 grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-end">
+          <div>
+            <p className="section-label text-xs font-semibold text-[#123763]">What your team handles</p>
+            <h2 className="font-editorial mt-4 text-4xl leading-tight text-[#191816] sm:text-6xl">
+              Every listing gets a small operating team.
+            </h2>
+          </div>
+          <p className="max-w-2xl text-lg leading-8 text-[#5a5044]">
+            The goal is not to bury you in data. The goal is to turn each listing into useful conversations, useful content, and a clear next-action list.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {features.map((feature, index) => (
-            <div 
-              key={index}
-              className="group bg-slate-50 rounded-2xl p-8 hover:bg-blue-600 transition-all duration-300"
-            >
-              <div className="text-4xl mb-4 group-hover:scale-110 transition-transform">{feature.icon}</div>
-              <h3 className="text-xl font-bold text-slate-900 mb-3 group-hover:text-white transition-colors">{feature.title}</h3>
-              <p className="text-slate-600 mb-4 group-hover:text-blue-100 transition-colors leading-relaxed">{feature.description}</p>
-              <div className="inline-block bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-sm font-medium group-hover:bg-white group-hover:text-blue-600 transition-colors">
-                {feature.highlight}
+        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+          {services.map((service) => (
+            <div key={service.title} className="group rounded-2xl border border-[#ded2bd] bg-[#f7efe0] p-6 transition duration-300 hover:-translate-y-1 hover:bg-[#191816] hover:shadow-2xl hover:shadow-[#8f7f61]/20">
+              <div className="mb-8 inline-flex rounded-full border border-[#d8a547] px-3 py-1 text-sm font-semibold text-[#7b5b1d] group-hover:border-white/20 group-hover:text-[#f7efe0]">
+                {service.proof}
               </div>
+              <h3 className="text-2xl font-bold text-[#191816] group-hover:text-white">{service.title}</h3>
+              <p className="mt-4 leading-7 text-[#5a5044] group-hover:text-[#f7efe0]/80">{service.description}</p>
             </div>
           ))}
         </div>

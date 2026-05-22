@@ -1,102 +1,137 @@
 'use client';
 
-const pipelineItems = [
-  { label: 'Buyer intent detected', detail: 'Moving in 60-90 days' },
-  { label: 'Seller signal matched', detail: 'High-equity homeowner' },
-  { label: 'Call booked', detail: 'Thursday, 3:30 PM' },
+const summaryItems = [
+  { time: '8:42 AM', task: 'Listing reviewed', status: 'done' },
+  { time: '8:49 AM', task: 'Buyer personas built', status: 'done' },
+  { time: '9:06 AM', task: 'Agent and investor channels found', status: 'ready' },
+  { time: '9:18 AM', task: 'Follow-up drafts waiting for approval', status: 'review' },
+  { time: '9:31 AM', task: 'Open house promo queued', status: 'ready' },
+];
+
+const proofCards = [
+  { value: '34', label: 'Buyer channels', detail: 'mapped for one listing', accent: 'border-l-[#191816]' },
+  { value: '12', label: 'Investor matches', detail: 'near the property', accent: 'border-l-[#3d7f58]' },
+  { value: '5', label: 'Drafts ready', detail: 'for your approval', accent: 'border-l-[#123763]' },
 ];
 
 export default function Hero() {
   return (
-    <section className="relative overflow-hidden bg-[#f7f9fc] pt-20 md:pt-20">
-      <div className="mx-auto grid max-w-7xl items-center gap-12 px-5 pb-12 pt-6 sm:px-6 md:pb-16 lg:grid-cols-[1.04fr_0.96fr] lg:px-8 lg:pb-18">
-        <div className="mx-auto max-w-3xl text-center lg:mx-0 lg:text-left">
-          <div className="mb-6 inline-flex items-center gap-2 rounded-lg border border-blue-200 bg-white px-3 py-2 text-sm font-semibold text-blue-700 shadow-sm">
-            <span className="h-2 w-2 rounded-full bg-emerald-500" />
-            AI-powered lead discovery for real estate agents
+    <section className="cream-surface relative overflow-hidden pt-24">
+      <div className="mx-auto grid max-w-7xl gap-14 px-5 pb-20 pt-8 sm:px-6 lg:grid-cols-[1.06fr_0.94fr] lg:px-8 lg:pb-28 lg:pt-12">
+        <div>
+          <div className="mb-9 flex items-center gap-3">
+            <span className="h-px w-9 bg-[#191816]" />
+            <span className="section-label text-xs font-semibold text-[#3d352c]">
+              Built for listing agents
+            </span>
           </div>
 
-          <h1 className="text-balance text-4xl font-bold leading-[1.04] tracking-normal text-slate-950 sm:text-5xl md:text-6xl lg:text-7xl">
-            We find buyers and sellers while you close deals.
+          <h1 className="font-editorial max-w-3xl text-5xl leading-[0.96] tracking-normal text-[#191816] sm:text-6xl lg:text-[86px]">
+            Your AI listing team finds buyers, follows up, and books conversations.
           </h1>
 
-          <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-slate-600 sm:text-xl lg:mx-0">
-            Stop chasing cold leads. SmartRealtyConnect identifies motivated prospects in your market, qualifies them, and turns interest into booked calls.
+          <p className="mt-8 max-w-2xl text-lg leading-8 text-[#3d352c] sm:text-xl">
+            Upload a listing. Your team maps likely buyers and sellers, prepares outreach, creates promo angles, and sends you the next actions worth taking.
           </p>
 
-          <div className="mt-9 flex flex-col items-stretch gap-3 sm:flex-row sm:items-center sm:justify-center lg:justify-start">
+          <div className="mt-8 flex flex-col gap-4 sm:hidden">
             <a
               href="#book"
-              className="inline-flex min-h-12 items-center justify-center rounded-lg bg-blue-700 px-6 py-3 text-base font-semibold text-white shadow-lg shadow-blue-700/20 transition hover:bg-blue-800"
+              className="inline-flex min-h-14 items-center justify-center rounded-full bg-[#191816] px-8 py-4 text-base font-semibold text-white shadow-xl shadow-black/15 transition hover:bg-[#123763]"
             >
-              Book free strategy call
+              Get a free listing report
+              <span className="ml-3">→</span>
             </a>
             <a
               href="#how"
-              className="inline-flex min-h-12 items-center justify-center rounded-lg border border-slate-300 bg-white px-6 py-3 text-base font-semibold text-slate-800 transition hover:border-blue-300 hover:text-blue-700"
+              className="inline-flex min-h-12 items-center justify-center border-b border-[#191816] px-1 text-base font-semibold text-[#191816] transition hover:text-[#123763]"
             >
-              See how it works
+              See how it works →
             </a>
           </div>
 
-          <div className="mt-8 flex flex-col items-center gap-3 text-sm text-slate-500 sm:flex-row sm:justify-center lg:justify-start">
-            <div className="flex -space-x-2">
-              <span className="h-8 w-8 rounded-full border-2 border-white bg-slate-300" />
-              <span className="h-8 w-8 rounded-full border-2 border-white bg-blue-200" />
-              <span className="h-8 w-8 rounded-full border-2 border-white bg-amber-200" />
-            </div>
-            <span>Trusted by 50+ real estate agents across the US</span>
+          <div className="mt-9 grid max-w-2xl gap-3 sm:grid-cols-3">
+            {proofCards.map((card) => (
+              <div key={card.label} className={`border-l-4 ${card.accent} rounded-r-lg border-y border-r border-[#ded2bd] bg-[#fffaf0] p-3 shadow-sm sm:p-4`}>
+                <div className="flex items-baseline gap-3 sm:block">
+                  <p className="font-editorial text-2xl italic text-[#123763]">{card.value}</p>
+                  <p className="mt-1 font-semibold text-[#191816]">{card.label}</p>
+                </div>
+                <p className="mt-1 text-sm leading-5 text-[#5a5044]">{card.detail}</p>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-9 hidden flex-col gap-4 sm:flex sm:flex-row sm:items-center">
+            <a
+              href="#book"
+              className="inline-flex min-h-14 items-center justify-center rounded-full bg-[#191816] px-8 py-4 text-base font-semibold text-white shadow-xl shadow-black/15 transition hover:-translate-y-0.5 hover:bg-[#123763]"
+            >
+              Get a free listing report
+              <span className="ml-3">→</span>
+            </a>
+            <a
+              href="#how"
+              className="inline-flex min-h-12 items-center justify-center border-b border-[#191816] px-1 text-base font-semibold text-[#191816] transition hover:text-[#123763]"
+            >
+              See how it works →
+            </a>
           </div>
         </div>
 
-        <div className="relative mx-auto hidden w-full max-w-xl lg:block lg:max-w-none">
-          <div className="rounded-lg border border-slate-200 bg-white p-4 shadow-2xl shadow-slate-900/10 sm:p-5">
-            <div className="rounded-lg border border-slate-200 bg-slate-950 p-4 text-white">
-              <div className="flex items-center justify-between gap-4">
-                <div>
-                  <p className="text-sm text-slate-400">Lead engine</p>
-                  <p className="mt-1 text-xl font-semibold">Today&apos;s pipeline</p>
-                </div>
-                <div className="rounded-lg bg-emerald-500/15 px-3 py-2 text-sm font-semibold text-emerald-300">
-                  Live
-                </div>
+        <div className="relative">
+          <div className="mx-auto max-w-md rounded-[2rem] border border-[#e4d7c1] bg-[#fffaf0] p-6 shadow-2xl shadow-[#8f7f61]/20">
+            <div className="flex items-center justify-between gap-4">
+              <div>
+                <p className="text-sm text-[#5a5044]">Daily listing summary</p>
+                <h2 className="mt-1 text-xl font-bold text-[#191816]">Somerset open house</h2>
               </div>
+              <span className="rounded-full bg-[#d8a547]/20 px-3 py-1 text-sm font-semibold text-[#7b5b1d]">
+                Today
+              </span>
+            </div>
 
-              <div className="mt-6 grid grid-cols-3 gap-3">
-                <div className="rounded-lg bg-white/10 p-3">
-                  <p className="text-2xl font-bold">18</p>
-                  <p className="mt-1 text-xs text-slate-300">New prospects</p>
+            <div className="mt-5 overflow-hidden rounded-2xl border border-[#e8dac3] bg-[#123763] p-5 text-white">
+              <p className="text-sm text-blue-100">Listing command center</p>
+              <div className="mt-5 grid grid-cols-3 gap-3">
+                <div>
+                  <p className="text-3xl font-bold">42</p>
+                  <p className="mt-1 text-xs text-blue-100">signals checked</p>
                 </div>
-                <div className="rounded-lg bg-white/10 p-3">
-                  <p className="text-2xl font-bold">7</p>
-                  <p className="mt-1 text-xs text-slate-300">Qualified</p>
+                <div>
+                  <p className="text-3xl font-bold">17</p>
+                  <p className="mt-1 text-xs text-blue-100">good fits</p>
                 </div>
-                <div className="rounded-lg bg-white/10 p-3">
-                  <p className="text-2xl font-bold">3</p>
-                  <p className="mt-1 text-xs text-slate-300">Calls booked</p>
+                <div>
+                  <p className="text-3xl font-bold">6</p>
+                  <p className="mt-1 text-xs text-blue-100">next actions</p>
                 </div>
               </div>
             </div>
 
-            <div className="mt-4 space-y-3">
-              {pipelineItems.map((item) => (
-                <div key={item.label} className="flex items-center justify-between gap-4 rounded-lg border border-slate-200 bg-slate-50 p-4">
+            <div className="mt-5 space-y-3">
+              {summaryItems.map((item) => (
+                <div key={item.task} className="flex items-center justify-between gap-4 rounded-xl border border-[#e8dac3] bg-[#f7efe0] p-4">
                   <div>
-                    <p className="font-semibold text-slate-950">{item.label}</p>
-                    <p className="mt-1 text-sm text-slate-500">{item.detail}</p>
+                    <p className="text-xs font-semibold text-[#6b5d4a]">{item.time}</p>
+                    <p className="mt-1 font-semibold text-[#191816]">{item.task}</p>
                   </div>
-                  <span className="rounded-lg bg-blue-100 px-3 py-1 text-sm font-semibold text-blue-700">
-                    Ready
+                  <span className="rounded-full bg-white px-3 py-1 text-xs font-semibold text-[#123763]">
+                    {item.status}
                   </span>
                 </div>
               ))}
             </div>
 
-            <div className="mt-4 rounded-lg border border-amber-200 bg-amber-50 p-4">
-              <p className="text-sm font-semibold text-amber-900">Next best action</p>
-              <p className="mt-1 text-sm leading-6 text-amber-800">
-                Call Sarah M. about the Oak Ridge listing. Budget verified, wants a showing this weekend.
+            <div className="mt-5 rounded-2xl border border-[#d8a547] bg-[#fff4d8] p-4">
+              <p className="font-semibold text-[#191816]">Needs your say-so</p>
+              <p className="mt-2 text-sm leading-6 text-[#5a5044]">
+                Send the first buyer-agent intro for this listing?
               </p>
+              <div className="mt-4 flex gap-2">
+                <button className="rounded-full border border-[#d8a547] px-4 py-2 text-sm font-semibold text-[#5a5044]">Not yet</button>
+                <button className="rounded-full bg-[#191816] px-4 py-2 text-sm font-semibold text-white">Approve</button>
+              </div>
             </div>
           </div>
         </div>

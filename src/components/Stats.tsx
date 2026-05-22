@@ -1,29 +1,30 @@
 'use client';
 
-const stats = [
-  { value: '10+', label: 'hours saved every week' },
-  { value: '30%', label: 'more qualified conversations' },
-  { value: '50+', label: 'agents already using the platform' },
-  { value: '$50K+', label: 'pipeline influenced for customers' },
+const outcomes = [
+  { value: '10+', label: 'hours back', detail: 'less digging, drafting, and follow-up' },
+  { value: '3x', label: 'more touchpoints', detail: 'without you writing every message' },
+  { value: '24/7', label: 'listing watch', detail: 'new signals summarized daily' },
+  { value: '1 tap', label: 'approval', detail: 'nothing sensitive goes out blindly' },
 ];
 
 export default function Stats() {
   return (
-    <section className="border-y border-slate-200 bg-white py-14">
+    <section className="cream-surface border-y border-[#e4d7c1] py-16">
       <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
-        <div className="grid gap-8 lg:grid-cols-[0.85fr_1.15fr] lg:items-end">
+        <div className="grid gap-8 lg:grid-cols-[0.78fr_1.22fr] lg:items-end">
           <div>
-            <p className="text-sm font-semibold uppercase tracking-[0.12em] text-blue-700">The math that matters</p>
-            <h2 className="mt-3 max-w-xl text-3xl font-bold tracking-normal text-slate-950 sm:text-4xl">
-              More booked conversations, less manual prospecting.
+            <p className="section-label text-xs font-semibold text-[#123763]">The work agents hate</p>
+            <h2 className="font-editorial mt-4 max-w-xl text-4xl leading-tight text-[#191816] sm:text-5xl">
+              Prospecting gets handled before your next showing.
             </h2>
           </div>
 
           <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
-            {stats.map((stat) => (
-              <div key={stat.label} className="rounded-lg border border-slate-200 bg-slate-50 p-4">
-                <div className="text-3xl font-bold tracking-normal text-slate-950 sm:text-4xl">{stat.value}</div>
-                <div className="mt-2 text-sm leading-5 text-slate-600">{stat.label}</div>
+            {outcomes.map((item) => (
+              <div key={item.label} className="rounded-xl border border-[#ded2bd] bg-[#fffaf0] p-4 shadow-sm transition hover:-translate-y-1 hover:shadow-lg">
+                <p className="font-editorial text-4xl italic text-[#123763]">{item.value}</p>
+                <p className="mt-2 font-bold text-[#191816]">{item.label}</p>
+                <p className="mt-2 text-sm leading-5 text-[#5a5044]">{item.detail}</p>
               </div>
             ))}
           </div>

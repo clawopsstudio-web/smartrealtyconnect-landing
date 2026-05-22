@@ -3,8 +3,13 @@
 
 :root {
   --foreground-rgb: 15, 23, 42;
-  --background-start-rgb: 248, 250, 252;
-  --background-end-rgb: 255, 255, 255;
+  --background-start-rgb: 247, 239, 224;
+  --background-end-rgb: 247, 239, 224;
+  --cream: #f7efe0;
+  --ink: #191816;
+  --estate-blue: #123763;
+  --estate-green: #3d7f58;
+  --estate-gold: #d8a547;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -17,12 +22,7 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background: rgb(var(--background-start-rgb));
 }
 
 /* Smooth scrolling */
@@ -73,4 +73,21 @@ html {
 
 .animate-pulse-glow {
   animation: pulse-glow 3s ease-in-out infinite;
+}
+
+.font-editorial {
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+.cream-surface {
+  background: var(--cream);
+}
+
+.ink {
+  color: var(--ink);
+}
+
+.section-label {
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
 }

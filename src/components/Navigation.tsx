@@ -14,26 +14,26 @@ export default function Navigation() {
 
   return (
     <nav className={`fixed w-full z-50 transition-all duration-300 ${
-      scrolled ? 'bg-white/95 backdrop-blur-md shadow-sm' : 'bg-transparent'
+      scrolled ? 'bg-[#f7efe0]/95 backdrop-blur-md shadow-sm' : 'bg-transparent'
     }`}>
       <div className="mx-auto max-w-7xl px-5 py-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
           {/* Logo */}
           <div className="flex min-w-0 items-center gap-2">
-            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-blue-700 shadow-lg">
-              <span className="text-white font-bold text-lg">SRC</span>
+            <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border-2 border-[#191816] bg-[#f7efe0] shadow-sm">
+              <span className="text-[11px] font-black leading-none text-[#191816]">SRC</span>
             </div>
-            <span className="truncate text-lg font-bold text-slate-900 sm:text-xl">SmartRealtyConnect</span>
+            <span className="truncate text-lg font-bold text-[#191816] sm:text-xl">SmartRealtyConnect</span>
           </div>
 
           {/* Desktop Nav */}
           <div className="hidden md:flex items-center gap-8">
-            <a href="#how" className="text-slate-600 hover:text-blue-600 transition font-medium">How It Works</a>
-            <a href="#features" className="text-slate-600 hover:text-blue-600 transition font-medium">Features</a>
-            <a href="#pricing" className="text-slate-600 hover:text-blue-600 transition font-medium">Pricing</a>
-            <a href="#faq" className="text-slate-600 hover:text-blue-600 transition font-medium">FAQ</a>
-            <a href="#book" className="bg-blue-700 hover:bg-blue-800 text-white px-6 py-2.5 rounded-lg font-semibold transition shadow-lg shadow-blue-700/20">
-              Book Demo
+            <a href="#how" className="text-[#3d352c] hover:text-[#123763] transition font-medium">How it works</a>
+            <a href="#features" className="text-[#3d352c] hover:text-[#123763] transition font-medium">What it handles</a>
+            <a href="#blog" className="text-[#3d352c] hover:text-[#123763] transition font-medium">Blog</a>
+            <a href="#pricing" className="text-[#3d352c] hover:text-[#123763] transition font-medium">Pricing</a>
+            <a href="#book" className="rounded-full bg-[#191816] px-6 py-3 font-semibold text-white shadow-xl shadow-black/15 transition hover:-translate-y-0.5 hover:bg-[#123763]">
+              Get buyer report
             </a>
           </div>
 
@@ -56,11 +56,11 @@ export default function Navigation() {
         {mobileOpen && (
           <div className="md:hidden mt-4 pb-4 border-t border-slate-200 pt-4">
             <div className="flex flex-col gap-4">
-              <a href="#how" onClick={() => setMobileOpen(false)} className="text-slate-600 hover:text-blue-600 transition font-medium">How It Works</a>
-              <a href="#features" onClick={() => setMobileOpen(false)} className="text-slate-600 hover:text-blue-600 transition font-medium">Features</a>
-              <a href="#pricing" onClick={() => setMobileOpen(false)} className="text-slate-600 hover:text-blue-600 transition font-medium">Pricing</a>
-              <a href="#faq" onClick={() => setMobileOpen(false)} className="text-slate-600 hover:text-blue-600 transition font-medium">FAQ</a>
-              <a href="#book" onClick={() => setMobileOpen(false)} className="bg-blue-700 text-white px-6 py-2.5 rounded-lg font-semibold text-center">Book Demo</a>
+              <a href="#how" onClick={() => setMobileOpen(false)} className="text-[#3d352c] hover:text-[#123763] transition font-medium">How it works</a>
+              <a href="#features" onClick={() => setMobileOpen(false)} className="text-[#3d352c] hover:text-[#123763] transition font-medium">What it handles</a>
+              <a href="#blog" onClick={() => setMobileOpen(false)} className="text-[#3d352c] hover:text-[#123763] transition font-medium">Blog</a>
+              <a href="#pricing" onClick={() => setMobileOpen(false)} className="text-[#3d352c] hover:text-[#123763] transition font-medium">Pricing</a>
+              <a href="#book" onClick={() => setMobileOpen(false)} className="rounded-full bg-[#191816] px-6 py-3 text-center font-semibold text-white">Get buyer report</a>
             </div>
           </div>
         )}

@@ -2,12 +2,12 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "SmartRealtyConnect - AI Buyer & Seller Discovery for Real Estate Agents",
-  description: "Stop chasing cold leads. Our AI discovers motivated buyers and sellers in your market — and delivers them to your calendar. Book your free strategy call today.",
-  keywords: "real estate leads, AI lead generation, buyer leads, seller leads, real estate agent tools",
+  title: "SmartRealtyConnect - AI Listing Growth Team for Real Estate Agents",
+  description: "Send a listing and get buyer channels, seller opportunities, outreach drafts, promo angles, and follow-up summaries prepared for your approval.",
+  keywords: "real estate listing marketing, buyer opportunity report, real estate follow up, listing growth, real estate agent marketing",
   openGraph: {
-    title: "SmartRealtyConnect - AI Buyer & Seller Discovery",
-    description: "AI discovers motivated buyers and sellers. You close more deals.",
+    title: "SmartRealtyConnect - AI Listing Growth Team",
+    description: "Every listing gets buyer and seller opportunities, outreach drafts, and follow-up support.",
     type: "website",
   },
 };

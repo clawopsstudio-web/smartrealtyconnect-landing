@@ -1,61 +1,47 @@
 'use client';
 
+const pains = [
+  {
+    title: 'Your listing post gets likes, not conversations.',
+    description: 'A few comments feel good, but they rarely turn into buyer-agent intros, investor interest, or booked calls.',
+  },
+  {
+    title: 'Good buyer channels are scattered everywhere.',
+    description: 'Agents, investors, relocation groups, renters, and local forums all matter. Finding the right ones takes hours.',
+  },
+  {
+    title: 'Follow-up dies when your day gets busy.',
+    description: 'Showings, sellers, contracts, inspections, and calls push outreach to the bottom of the list.',
+  },
+  {
+    title: 'Content is needed for every listing, but it takes too long.',
+    description: 'Photos, captions, open house posts, scripts, and short promos should be ready before the listing loses momentum.',
+  },
+];
+
 export default function Problem() {
-  const problems = [
-    {
-      icon: '💸',
-      title: 'Buying Leads That Don\'t Convert',
-      description: 'Expensive leads from platforms everyone else uses. No competitive edge, low conversion rates.',
-    },
-    {
-      icon: '⏰',
-      title: 'Hours Wasted on Unqualified Prospects',
-      description: 'Time spent chasing people who aren\'t ready to buy or sell. Time you could spend closing.',
-    },
-    {
-      icon: '😤',
-      title: 'Missing Motivated Buyers Hiding in Plain Sight',
-      description: 'Real opportunities in Reddit, forums, and public data you don\'t have time to find.',
-    },
-    {
-      icon: '📉',
-      title: 'No Time for Actual Closing',
-      description: 'All your time on prospecting, none on what you do best: negotiating and closing deals.',
-    },
-  ];
-
   return (
-    <section className="py-24 bg-white">
-      <div className="max-w-6xl mx-auto px-6">
-        <div className="text-center mb-16">
-          <span className="text-red-500 font-semibold text-sm uppercase tracking-wider">The Problem</span>
-          <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mt-4 mb-6">
-            Stop Wasting Time on Leads That Go Nowhere
-          </h2>
-          <p className="text-xl text-slate-600 max-w-2xl mx-auto">
-            Every hour you spend chasing cold leads is an hour you&apos;re not closing deals. There&apos;s a better way.
-          </p>
-        </div>
-
-        <div className="grid md:grid-cols-2 gap-6">
-          {problems.map((problem, index) => (
-            <div 
-              key={index}
-              className="bg-red-50 border border-red-100 rounded-2xl p-8 hover:shadow-lg transition-all hover:-translate-y-1"
-            >
-              <div className="text-4xl mb-4">{problem.icon}</div>
-              <h3 className="text-xl font-bold text-slate-900 mb-3">{problem.title}</h3>
-              <p className="text-slate-600 leading-relaxed">{problem.description}</p>
-            </div>
-          ))}
-        </div>
-
-        {/* Transition to Solution */}
-        <div className="mt-16 text-center">
-          <div className="inline-block bg-gradient-to-r from-slate-900 to-slate-700 text-white px-8 py-4 rounded-2xl">
-            <p className="text-lg font-medium">
-              <span className="text-amber-400">What if instead:</span> Motivated buyers and sellers found YOU?
+    <section className="bg-[#fffaf0] py-24">
+      <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
+        <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr]">
+          <div>
+            <p className="section-label text-xs font-semibold text-[#123763]">Why listings stall</p>
+            <h2 className="font-editorial mt-4 text-4xl leading-tight text-[#191816] sm:text-6xl">
+              The listing is live. The hard part starts after that.
+            </h2>
+            <p className="mt-6 text-lg leading-8 text-[#5a5044]">
+              Most agents do not need another dashboard. They need the repetitive listing work handled: finding the right people, writing the follow-up, and keeping every next step moving.
             </p>
+          </div>
+
+          <div className="grid gap-4 sm:grid-cols-2">
+            {pains.map((pain, index) => (
+              <div key={pain.title} className="rounded-2xl border border-[#e4d7c1] bg-[#f7efe0] p-6 transition hover:-translate-y-1 hover:shadow-xl hover:shadow-[#8f7f61]/10">
+                <p className="font-editorial text-3xl italic text-[#123763]">0{index + 1}</p>
+                <h3 className="mt-5 text-xl font-bold text-[#191816]">{pain.title}</h3>
+                <p className="mt-3 leading-7 text-[#5a5044]">{pain.description}</p>
+              </div>
+            ))}
           </div>
         </div>
       </div>
