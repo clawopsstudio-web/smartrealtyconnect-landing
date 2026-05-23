@@ -1,12 +1,8 @@
 'use client';
 
-import { motion, useInView } from 'framer-motion';
-import { useRef } from 'react';
+import ScrollReveal, { StaggerReveal } from './ScrollReveal';
 
 export default function Problem() {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
-
   const problems = [
     {
       icon: '💸',
@@ -31,14 +27,10 @@ export default function Problem() {
   ];
 
   return (
-    <section ref={ref} className="cream-surface py-24">
+    <section className="cream-surface py-24">
       <div className="mx-auto max-w-6xl px-6">
-        <motion.div 
-          className="mb-16 text-center"
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6 }}
-        >
+        {/* Header with scroll animation */}
+        <ScrollReveal className="mb-16 text-center">
           <span className="section-label text-xs font-semibold text-[#7b5b1d]">
             The Problem
           </span>
@@ -48,44 +40,30 @@ export default function Problem() {
           <p className="mt-6 text-xl text-[#5a5044] max-w-2xl mx-auto">
             Every hour chasing cold leads is an hour you're not closing. There's a better way.
           </p>
-        </motion.div>
+        </ScrollReveal>
 
-        <div className="grid md:grid-cols-2 gap-6">
+        {/* Problem cards with stagger animation */}
+        <StaggerReveal className="grid md:grid-cols-2 gap-6">
           {problems.map((problem, index) => (
-            <motion.div
+            <div
               key={index}
-              initial={{ opacity: 0, x: index % 2 === 0 ? -30 : 30 }}
-              animate={isInView ? { opacity: 1, x: 0 } : {}}
-              transition={{ duration: 0.5, delay: index * 0.15 }}
-              whileHover={{ y: -4 }}
-              className="bg-red-50 border border-red-100 rounded-2xl p-8"
+              className="hover-lift bg-red-50 border border-red-100 rounded-2xl p-8"
             >
-              <motion.div 
-                className="text-4xl mb-4"
-                animate={{ scale: [1, 1.1, 1] }}
-                transition={{ duration: 2, repeat: Infinity }}
-              >
-                {problem.icon}
-              </motion.div>
+              <div className="text-4xl mb-4 animate-float">{problem.icon}</div>
               <h3 className="text-xl font-bold text-[#191816] mb-3">{problem.title}</h3>
               <p className="text-[#5a5044] leading-relaxed">{problem.description}</p>
-            </motion.div>
+            </div>
           ))}
-        </div>
+        </StaggerReveal>
 
         {/* Transition to Solution */}
-        <motion.div 
-          className="mt-16 text-center"
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, delay: 0.7 }}
-        >
+        <ScrollReveal delay={300} className="mt-16 text-center">
           <div className="inline-block bg-[#191816] text-white px-8 py-4 rounded-2xl">
             <p className="text-lg font-medium">
               <span className="text-[#d8a547]">What if instead:</span> Motivated buyers and sellers found YOU?
             </p>
           </div>
-        </motion.div>
+        </ScrollReveal>
       </div>
     </section>
   );

@@ -66,8 +66,71 @@ html {
   text-transform: uppercase;
 }
 
-/* CSS Keyframe Animations - No Flickering */
-/* These are backup animations; Framer Motion handles main scroll animations */
+/* ============================================
+   SCROLL-TRIGGERED ANIMATIONS (ClawOps Pattern)
+   All sections use: opacity:0 + transform + JS reveal
+   ============================================ */
+
+/* Initial hidden state for all animated elements */
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+  will-change: opacity, transform;
+}
+
+.scroll-reveal-left {
+  opacity: 0;
+  transform: translateX(-30px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+  will-change: opacity, transform;
+}
+
+.scroll-reveal-right {
+  opacity: 0;
+  transform: translateX(30px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+  will-change: opacity, transform;
+}
+
+.scroll-reveal-scale {
+  opacity: 0;
+  transform: scale(0.95);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+  will-change: opacity, transform;
+}
+
+/* Revealed state (added by JS IntersectionObserver) */
+.scroll-reveal.is-visible,
+.scroll-reveal-left.is-visible,
+.scroll-reveal-right.is-visible,
+.scroll-reveal-scale.is-visible {
+  opacity: 1;
+  transform: translateY(0) translateX(0) scale(1);
+}
+
+/* Staggered children */
+.stagger-children > * {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.stagger-children.is-visible > *:nth-child(1) { transition-delay: 0.1s; }
+.stagger-children.is-visible > *:nth-child(2) { transition-delay: 0.2s; }
+.stagger-children.is-visible > *:nth-child(3) { transition-delay: 0.3s; }
+.stagger-children.is-visible > *:nth-child(4) { transition-delay: 0.4s; }
+.stagger-children.is-visible > *:nth-child(5) { transition-delay: 0.5s; }
+.stagger-children.is-visible > *:nth-child(6) { transition-delay: 0.6s; }
+
+.stagger-children.is-visible > * {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ============================================
+   CSS KEYFRAME ANIMATIONS
+   ============================================ */
 
 @keyframes drift-card {
   0%, 100% {
@@ -92,14 +155,43 @@ html {
   }
 }
 
-@keyframes slide-up {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
+@keyframes float-gentle {
+  0%, 100% {
+    transform: translateY(0px);
   }
-  to {
-    opacity: 1;
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+@keyframes star-twinkle {
+  0%, 100% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.5);
+  }
+}
+
+@keyframes scroll-indicator {
+  0%, 100% {
     transform: translateY(0);
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(8px);
+    opacity: 0.5;
+  }
+}
+
+@keyframes ticker {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
   }
 }
 
@@ -114,16 +206,7 @@ html {
   }
 }
 
-@keyframes float-gentle {
-  0%, 100% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-6px);
-  }
-}
-
-/* CSS Animation Classes - These run once, no flickering */
+/* Animation Classes */
 .motion-card {
   animation: drift-card 8s ease-in-out infinite;
   will-change: transform;
@@ -134,9 +217,22 @@ html {
   will-change: opacity, transform;
 }
 
-.animate-slide-up {
-  animation: slide-up 0.6s ease-out forwards;
-  animation-fill-mode: both;
+.animate-float {
+  animation: float-gentle 4s ease-in-out infinite;
+  will-change: transform;
+}
+
+.animate-star-twinkle {
+  animation: star-twinkle 3s ease-in-out infinite;
+  will-change: opacity, transform;
+}
+
+.animate-scroll-indicator {
+  animation: scroll-indicator 2s ease-in-out infinite;
+}
+
+.animate-ticker {
+  animation: ticker 40s linear infinite;
 }
 
 .animate-fade-in-up {
@@ -144,12 +240,10 @@ html {
   animation-fill-mode: both;
 }
 
-.animate-float {
-  animation: float-gentle 4s ease-in-out infinite;
-  will-change: transform;
-}
+/* ============================================
+   HOVER EFFECTS
+   ============================================ */
 
-/* Hover Effects */
 .hover-lift {
   transition: transform 0.25s ease, box-shadow 0.25s ease;
   will-change: transform;
@@ -160,26 +254,18 @@ html {
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
 }
 
-/* Section Reveal Animation */
-.reveal-on-scroll {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.7s ease, transform 0.7s ease;
+.hover-scale {
+  transition: transform 0.25s ease;
 }
 
-.reveal-on-scroll.is-visible {
-  opacity: 1;
-  transform: translateY(0);
+.hover-scale:hover {
+  transform: scale(1.02);
 }
 
-/* Staggered Animation Delays */
-.stagger-1 { animation-delay: 0.1s; }
-.stagger-2 { animation-delay: 0.2s; }
-.stagger-3 { animation-delay: 0.3s; }
-.stagger-4 { animation-delay: 0.4s; }
-.stagger-5 { animation-delay: 0.5s; }
+/* ============================================
+   REDUCED MOTION - Accessibility
+   ============================================ */
 
-/* Reduced Motion - Accessibility */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: 0.01ms !important;
@@ -188,13 +274,20 @@ html {
     transition-duration: 0.01ms !important;
   }
 
-  .reveal-on-scroll {
-    opacity: 1;
-    transform: none;
+  .scroll-reveal,
+  .scroll-reveal-left,
+  .scroll-reveal-right,
+  .scroll-reveal-scale,
+  .stagger-children > * {
+    opacity: 1 !important;
+    transform: none !important;
   }
 }
 
-/* GPU Acceleration for animations */
+/* ============================================
+   GPU ACCELERATION
+   ============================================ */
+
 .gpu-accelerated {
   transform: translateZ(0);
   backface-visibility: hidden;

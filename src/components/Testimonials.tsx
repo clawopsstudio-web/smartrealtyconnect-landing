@@ -1,49 +1,78 @@
 'use client';
 
-const reportItems = [
-  {
-    label: 'Buyer-side map',
-    text: 'Which buyer agents, investor profiles, renter segments, and relocation angles fit the listing.',
-  },
-  {
-    label: 'Seller-side map',
-    text: 'Nearby owner and property signals that can create future listing conversations.',
-  },
-  {
-    label: 'Action queue',
-    text: 'Drafts, calls, posts, and follow-ups organized by what needs your approval next.',
-  },
-];
+import ScrollReveal, { StaggerReveal } from './ScrollReveal';
 
 export default function Testimonials() {
-  return (
-    <section className="reveal bg-[#fffaf0] py-24">
-      <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
-        <div className="rounded-[2rem] border border-[#ded2bd] bg-[#f7efe0] p-6 sm:p-10">
-          <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
-            <div>
-              <p className="section-label text-xs font-semibold text-[#123763]">What you receive</p>
-              <h2 className="font-editorial mt-4 text-4xl leading-tight text-[#191816] sm:text-6xl">
-                A report agents can actually act on.
-              </h2>
-              <p className="mt-6 text-lg leading-8 text-[#5a5044]">
-                Not a spreadsheet of random names. Every opportunity is tied back to the listing, scored for fit, and turned into a next action.
-              </p>
-            </div>
+  const testimonials = [
+    {
+      quote: "I went from spending 20 hours a week on lead gen to 2 hours. My calendar is full of qualified leads who actually want to talk.",
+      name: "Sarah Mitchell",
+      title: "RE Agent, Keller Williams",
+      location: "Austin, TX",
+      result: "12 deals in 90 days",
+    },
+    {
+      quote: "The seller leads are incredible. I found 3 families in my farm area who were thinking about selling — and I was the first agent they called.",
+      name: "Marcus Johnson",
+      title: "RE Agent, Compass",
+      location: "Denver, CO",
+      result: "+$180K in closed volume",
+    },
+    {
+      quote: "Finally, a lead gen service that doesn't feel like spam. These people are pre-warmed and ready to buy. My conversion rate doubled.",
+      name: "Jennifer Park",
+      title: "RE Agent, RE/MAX",
+      location: "Seattle, WA",
+      result: "65% close rate",
+    },
+  ];
 
-            <div className="space-y-4">
-              {reportItems.map((item, index) => (
-                <div key={item.label} className="rounded-2xl border border-[#ded2bd] bg-[#fffaf0] p-5">
-                  <div className="flex items-center gap-4">
-                    <span className="font-editorial text-3xl italic text-[#123763]">0{index + 1}</span>
-                    <h3 className="text-xl font-bold text-[#191816]">{item.label}</h3>
-                  </div>
-                  <p className="mt-4 leading-7 text-[#5a5044]">{item.text}</p>
+  return (
+    <section className="cream-surface py-24">
+      <div className="mx-auto max-w-6xl px-6">
+        {/* Header with scroll animation */}
+        <ScrollReveal className="mb-16 text-center">
+          <span className="section-label text-xs font-semibold text-[#3d7f58]">
+            Success Stories
+          </span>
+          <h2 className="mt-4 font-editorial text-4xl md:text-5xl font-bold text-[#191816]">
+            Agents who've transformed<br />their business
+          </h2>
+        </ScrollReveal>
+
+        {/* Testimonials with stagger animation */}
+        <StaggerReveal className="grid md:grid-cols-3 gap-8">
+          {testimonials.map((testimonial, index) => (
+            <div
+              key={index}
+              className="hover-lift bg-white rounded-2xl p-8 shadow-lg border border-slate-100"
+            >
+              {/* Quote Mark */}
+              <div className="text-6xl text-blue-100 -mt-4 mb-2">"</div>
+              
+              <p className="text-slate-700 leading-relaxed mb-6 italic">
+                {testimonial.quote}
+              </p>
+
+              {/* Result Badge */}
+              <div className="inline-block bg-green-100 text-green-700 px-4 py-2 rounded-full text-sm font-semibold mb-6">
+                {testimonial.result}
+              </div>
+
+              {/* Author */}
+              <div className="flex items-center gap-4">
+                <div className="bg-gradient-to-br from-blue-500 to-blue-600 w-12 h-12 rounded-full flex items-center justify-center text-white font-bold">
+                  {testimonial.name.charAt(0)}
                 </div>
-              ))}
+                <div>
+                  <div className="font-semibold text-slate-900">{testimonial.name}</div>
+                  <div className="text-sm text-slate-500">{testimonial.title}</div>
+                  <div className="text-sm text-slate-400">{testimonial.location}</div>
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
+          ))}
+        </StaggerReveal>
       </div>
     </section>
   );

@@ -1,12 +1,8 @@
 'use client';
 
-import { motion, useInView } from 'framer-motion';
-import { useRef } from 'react';
+import ScrollReveal, { StaggerReveal } from './ScrollReveal';
 
 export default function Features() {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
-
   const features = [
     {
       icon: '🔍',
@@ -35,26 +31,22 @@ export default function Features() {
     {
       icon: '📊',
       title: 'Real-Time Dashboard',
-      description: 'Track every lead, their status, and your pipeline. See exactly what\'s working.',
+      description: "Track every lead, their status, and your pipeline. See exactly what's working.",
       highlight: 'Full transparency',
     },
     {
       icon: '🛡️',
       title: 'Exclusive Territory',
-      description: 'Your service area is protected. We don\'t sell the same leads to multiple agents.',
+      description: "Your service area is protected. We don't sell the same leads to multiple agents.",
       highlight: 'No competition',
     },
   ];
 
   return (
-    <section ref={ref} id="features" className="cream-surface py-24">
+    <section id="features" className="cream-surface py-24">
       <div className="mx-auto max-w-6xl px-6">
-        <motion.div 
-          className="mb-16 text-center"
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6 }}
-        >
+        {/* Header with scroll animation */}
+        <ScrollReveal className="mb-16 text-center">
           <span className="section-label text-xs font-semibold text-[#7b5b1d]">
             Features
           </span>
@@ -64,37 +56,28 @@ export default function Features() {
           <p className="mt-6 text-xl text-[#5a5044] max-w-2xl mx-auto">
             A complete lead generation system built for agents who want results, not busywork.
           </p>
-        </motion.div>
+        </ScrollReveal>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {/* Features grid with stagger animation */}
+        <StaggerReveal className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {features.map((feature, index) => (
-            <motion.div
+            <div
               key={index}
-              initial={{ opacity: 0, y: 30 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              whileHover={{ y: -6, backgroundColor: "#123763" }}
-              className="group bg-[#fffaf0] rounded-2xl p-8 border border-[#e4d7c1] cursor-pointer"
+              className="hover-lift group bg-[#fffaf0] rounded-2xl p-8 border border-[#e4d7c1] cursor-pointer"
             >
-              <motion.div 
-                className="text-4xl mb-4"
-                whileHover={{ scale: 1.1 }}
-                transition={{ type: "spring" }}
-              >
-                {feature.icon}
-              </motion.div>
+              <div className="text-4xl mb-4 animate-float">{feature.icon}</div>
               <h3 className="text-xl font-bold text-[#191816] mb-3 group-hover:text-white transition-colors">
                 {feature.title}
               </h3>
               <p className="text-[#5a5044] mb-4 group-hover:text-blue-100 transition-colors leading-relaxed">
                 {feature.description}
               </p>
-              <div className="inline-block bg-[#f7efe0] text-[#123763] px-3 py-1 rounded-full text-sm font-semibold group-hover:bg-white group-hover:text-[#123763] transition-colors">
+              <div className="inline-block bg-[#f7efe0] text-[#123763] px-3 py-1 rounded-full text-sm font-semibold">
                 {feature.highlight}
               </div>
-            </motion.div>
+            </div>
           ))}
-        </div>
+        </StaggerReveal>
       </div>
     </section>
   );

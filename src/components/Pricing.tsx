@@ -1,95 +1,136 @@
 'use client';
 
-const plans = [
-  {
-    name: 'Core',
-    price: '699',
-    description: 'For solo agents who want every listing worked properly.',
-    features: [
-      'Buyer and seller opportunity reports',
-      'Approved outreach drafts',
-      'Weekly listing summary',
-      'Lead tracker and follow-up queue',
-      'Inbox and calendar support',
-    ],
-  },
-  {
-    name: 'Growth',
-    price: '1,200+',
-    description: 'For agents who want calls, content, and follow-up handled deeper.',
-    features: [
-      'Everything in Core',
-      'Approved calling workflows',
-      'Call summaries and lead scoring',
-      'Listing promo content',
-      'Social post drafts and open house campaigns',
-      'Priority optimization',
-    ],
-    featured: true,
-  },
-  {
-    name: 'Team',
-    price: 'Custom',
-    description: 'For brokerages and teams that want repeatable listing operations.',
-    features: [
-      'Multiple agents and markets',
-      'Shared reporting workspace',
-      'Team lead routing',
-      'Custom approval rules',
-      'Dedicated onboarding',
-    ],
-  },
-];
+import ScrollReveal, { StaggerReveal } from './ScrollReveal';
 
 export default function Pricing() {
-  return (
-    <section id="pricing" className="reveal bg-[#191816] py-24 text-white">
-      <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
-        <div className="mb-14 max-w-3xl">
-          <p className="section-label text-xs font-semibold text-[#d8a547]">Plans</p>
-          <h2 className="font-editorial mt-4 text-4xl leading-tight sm:text-6xl">
-            Start with one listing. Keep it if it creates conversations.
-          </h2>
-          <p className="mt-6 text-lg leading-8 text-[#f7efe0]/70">
-            Every plan includes setup, tracking, and the operating system behind your listing team. No tool accounts to manage.
-          </p>
-        </div>
+  const plans = [
+    {
+      name: 'Starter',
+      price: '399',
+      period: '/month',
+      description: 'Perfect for agents getting started with AI lead gen.',
+      features: [
+        '5 buyer leads/month',
+        '3 seller leads/month',
+        'Email outreach included',
+        'Basic dashboard',
+        'Email support',
+      ],
+      cta: 'Start Free Trial',
+      popular: false,
+    },
+    {
+      name: 'Pro',
+      price: '799',
+      period: '/month',
+      description: 'For agents who want a consistent flow of qualified leads.',
+      features: [
+        '15 buyer leads/month',
+        '10 seller leads/month',
+        'Email + SMS outreach',
+        'Full dashboard + analytics',
+        'Calendar integration',
+        'Priority support',
+        'Exclusive territory',
+      ],
+      cta: 'Start Free Trial',
+      popular: true,
+    },
+    {
+      name: 'Enterprise',
+      price: 'Custom',
+      period: '',
+      description: 'For teams and brokerages who need volume.',
+      features: [
+        'Unlimited leads',
+        'All outreach channels',
+        'White-label options',
+        'API access',
+        'Dedicated account manager',
+        'Custom integrations',
+      ],
+      cta: 'Contact Us',
+      popular: false,
+    },
+  ];
 
-        <div className="grid gap-5 lg:grid-cols-3">
-          {plans.map((plan) => (
-            <div key={plan.name} className={`hover-lift rounded-2xl border p-6 ${plan.featured ? 'border-[#d8a547] bg-[#fffaf0] text-[#191816]' : 'border-white/15 bg-white/5'}`}>
-              {plan.featured && (
-                <div className="mb-5 inline-flex rounded-full bg-[#d8a547] px-3 py-1 text-sm font-bold text-[#191816]">
-                  Most complete
+  return (
+    <section id="pricing" className="bg-[#191816] py-24">
+      <div className="mx-auto max-w-6xl px-6">
+        {/* Header with scroll animation */}
+        <ScrollReveal className="mb-16 text-center">
+          <span className="section-label text-xs font-semibold text-[#d8a547]">
+            Pricing
+          </span>
+          <h2 className="mt-4 font-editorial text-4xl md:text-5xl font-bold text-white">
+            Simple, Transparent Pricing
+          </h2>
+          <p className="mt-6 text-xl text-slate-400 max-w-2xl mx-auto">
+            No hidden fees. No long-term contracts. Cancel anytime.
+          </p>
+        </ScrollReveal>
+
+        {/* Pricing cards with stagger animation */}
+        <StaggerReveal className="grid md:grid-cols-3 gap-8">
+          {plans.map((plan, index) => (
+            <div
+              key={index}
+              className={`relative bg-white rounded-2xl p-8 ${
+                plan.popular
+                  ? 'ring-2 ring-amber-400 scale-105 shadow-2xl'
+                  : 'shadow-lg'
+              }`}
+            >
+              {plan.popular && (
+                <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-amber-400 text-slate-900 px-4 py-1 rounded-full text-sm font-bold">
+                  Most Popular
                 </div>
               )}
-              <h3 className="text-2xl font-bold">{plan.name}</h3>
-              <p className={`mt-3 leading-7 ${plan.featured ? 'text-[#5a5044]' : 'text-[#f7efe0]/70'}`}>{plan.description}</p>
-              <div className="mt-8 flex items-end gap-1">
-                {plan.price !== 'Custom' && <span className="mb-2 text-xl">$</span>}
-                <span className="font-editorial text-5xl italic">{plan.price}</span>
-                {plan.price !== 'Custom' && <span className={`mb-2 ${plan.featured ? 'text-[#5a5044]' : 'text-[#f7efe0]/70'}`}>/mo</span>}
+
+              <div className="text-center mb-8">
+                <h3 className="text-2xl font-bold text-slate-900 mb-2">{plan.name}</h3>
+                <p className="text-slate-600 text-sm mb-4">{plan.description}</p>
+                <div className="flex items-baseline justify-center gap-1">
+                  {plan.price === 'Custom' ? (
+                    <span className="text-4xl font-bold text-slate-900">{plan.price}</span>
+                  ) : (
+                    <>
+                      <span className="text-2xl text-slate-400">$</span>
+                      <span className="text-5xl font-bold text-slate-900">{plan.price}</span>
+                    </>
+                  )}
+                  <span className="text-slate-500">{plan.period}</span>
+                </div>
               </div>
-              <p className={`mt-3 text-sm ${plan.featured ? 'text-[#5a5044]' : 'text-[#f7efe0]/60'}`}>One-time setup starts at $1,500.</p>
-              <ul className="mt-8 space-y-4">
-                {plan.features.map((feature) => (
-                  <li key={feature} className="flex gap-3">
-                    <span className={plan.featured ? 'text-[#3d7f58]' : 'text-[#d8a547]'}>✓</span>
-                    <span>{feature}</span>
+
+              <ul className="space-y-4 mb-8">
+                {plan.features.map((feature, i) => (
+                  <li key={i} className="flex items-start gap-3">
+                    <svg className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    </svg>
+                    <span className="text-slate-600">{feature}</span>
                   </li>
                 ))}
               </ul>
-              <a
-                href="#book"
-                className={`mt-8 inline-flex w-full items-center justify-center rounded-full px-5 py-4 font-semibold transition hover:-translate-y-0.5 ${
-                  plan.featured ? 'bg-[#191816] text-white hover:bg-[#123763]' : 'bg-white text-[#191816] hover:bg-[#f7efe0]'
-                }`}
-              >
-                Talk through this plan
-              </a>
+
+              <button className={`w-full py-4 rounded-xl font-semibold text-lg transition-all hover-lift ${
+                plan.popular
+                  ? 'bg-amber-500 hover:bg-amber-600 text-white shadow-lg'
+                  : 'bg-slate-900 hover:bg-slate-800 text-white'
+              }`}>
+                {plan.cta}
+              </button>
             </div>
           ))}
-        </div>
+        </StaggerReveal>
+
+        {/* Setup Fee Note */}
+        <ScrollReveal delay={300} className="mt-12 text-center">
+          <p className="text-slate-400">
+            One-time setup fee: <span className="text-white font-semibold">$1,500</span> (includes onboarding, training, and first 30 days of optimization)
+          </p>
+        </ScrollReveal>
       </div>
     </section>
   );
