@@ -42,8 +42,6 @@ export default function Footer() {
             <ul className="space-y-3 text-slate-400">
               <li><a href="https://clawops.studio" target="_blank" rel="noopener noreferrer" className="hover:text-white transition">ClawOps Studio</a></li>
               <li><a href="mailto:hello@clawops.studio" className="hover:text-white transition">Contact</a></li>
-              <li><a href="#" className="hover:text-white transition">Privacy Policy</a></li>
-              <li><a href="#" className="hover:text-white transition">Terms of Service</a></li>
             </ul>
           </ScrollReveal>
         </div>

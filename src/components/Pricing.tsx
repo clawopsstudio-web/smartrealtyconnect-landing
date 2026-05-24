@@ -108,7 +108,7 @@ export default function Pricing() {
                     : 'bg-[#191816] hover:bg-[#2a2a2a] text-white'
                 }`}
               >
-                {plan.cta}
+                Book a Demo
               </a>
             </div>
           ))}
@@ -165,7 +165,7 @@ export default function Pricing() {
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 bg-[#123763] hover:bg-[#0d2a4d] text-white px-6 py-3 rounded-xl font-semibold transition-all"
             >
-              Contact Us
+              Book a Demo
             </a>
           </div>
         </ScrollReveal>
