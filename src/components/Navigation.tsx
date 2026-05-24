@@ -20,10 +20,10 @@ export default function Navigation() {
         <div className="flex justify-between items-center">
           {/* Logo */}
           <div className="flex items-center gap-2">
-            <div className="w-10 h-10 bg-gradient-to-br from-blue-600 to-blue-800 rounded-xl flex items-center justify-center shadow-lg">
+            <div className="w-10 h-10 bg-gradient-to-br from-[#123763] to-[#1a4a7a] rounded-xl flex items-center justify-center shadow-lg">
               <span className="text-white font-bold text-lg">SRC</span>
             </div>
-            <span className="font-bold text-xl text-[#191816]">SmartRealtyConnect</span>
+            <span className="font-bold text-xl text-[#191816]">Smart Realty Connect</span>
           </div>
 
           {/* Desktop Nav */}
@@ -32,8 +32,13 @@ export default function Navigation() {
             <a href="#features" className="text-[#5a5044] hover:text-[#123763] transition font-medium">Features</a>
             <a href="#pricing" className="text-[#5a5044] hover:text-[#123763] transition font-medium">Pricing</a>
             <a href="#faq" className="text-[#5a5044] hover:text-[#123763] transition font-medium">FAQ</a>
-            <a href="#book" className="bg-amber-500 hover:bg-amber-600 text-white px-6 py-2.5 rounded-lg font-semibold transition shadow-lg shadow-amber-500/25">
-              Book Demo
+            <a 
+              href="https://calendly.com/clawops-studio/30min" 
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-[#d8a547] hover:bg-[#c49537] text-[#191816] px-6 py-2.5 rounded-lg font-semibold transition shadow-lg"
+            >
+              Book a Demo
             </a>
           </div>
 
@@ -60,7 +65,15 @@ export default function Navigation() {
               <a href="#features" onClick={() => setMobileOpen(false)} className="text-slate-600 hover:text-blue-600 transition font-medium">Features</a>
               <a href="#pricing" onClick={() => setMobileOpen(false)} className="text-slate-600 hover:text-blue-600 transition font-medium">Pricing</a>
               <a href="#faq" onClick={() => setMobileOpen(false)} className="text-slate-600 hover:text-blue-600 transition font-medium">FAQ</a>
-              <a href="#book" onClick={() => setMobileOpen(false)} className="bg-amber-500 text-white px-6 py-2.5 rounded-lg font-semibold text-center">Book Demo</a>
+              <a 
+                href="https://calendly.com/clawops-studio/30min" 
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => setMobileOpen(false)}
+                className="bg-[#d8a547] text-[#191816] px-6 py-2.5 rounded-lg font-semibold text-center"
+              >
+                Book a Demo
+              </a>
             </div>
           </div>
         )}

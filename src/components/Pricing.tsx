@@ -3,133 +3,171 @@
 import ScrollReveal, { StaggerReveal } from './ScrollReveal';
 
 export default function Pricing() {
-  const plans = [
+  const setupPlans = [
     {
-      name: 'Starter',
-      price: '399',
-      period: '/month',
-      description: 'Perfect for agents getting started with AI lead gen.',
+      name: 'Basic Setup',
+      price: '$1,500',
+      description: 'One-time fee',
       features: [
-        '5 buyer leads/month',
-        '3 seller leads/month',
-        'Email outreach included',
-        'Basic dashboard',
-        'Email support',
+        'VPS provisioning',
+        'AI agent installation',
+        'Dashboard setup',
+        'Database setup',
+        'End-to-end testing',
       ],
-      cta: 'Start Free Trial',
-      popular: false,
+      cta: 'Get Started',
     },
     {
-      name: 'Pro',
-      price: '799',
-      period: '/month',
-      description: 'For agents who want a consistent flow of qualified leads.',
+      name: 'Full Setup',
+      price: '$3,000',
+      description: 'One-time fee',
       features: [
-        '15 buyer leads/month',
-        '10 seller leads/month',
-        'Email + SMS outreach',
-        'Full dashboard + analytics',
-        'Calendar integration',
-        'Priority support',
-        'Exclusive territory',
+        'Everything in Basic Setup',
+        'Full buyer/seller lead strategy',
+        'CRM integration',
+        'Google Sheets setup',
+        'Onboarding call included',
       ],
-      cta: 'Start Free Trial',
+      cta: 'Get Started',
       popular: true,
     },
+  ];
+
+  const managedPlans = [
     {
-      name: 'Enterprise',
-      price: 'Custom',
-      period: '',
-      description: 'For teams and brokerages who need volume.',
+      name: 'Managed Service',
+      price: '$399',
+      period: '/month',
       features: [
-        'Unlimited leads',
-        'All outreach channels',
-        'White-label options',
-        'API access',
-        'Dedicated account manager',
-        'Custom integrations',
+        'Your own managed VPS',
+        'Support Agent — monitors & fixes issues',
+        'BDM Agent — strategy check-ins',
+        'Claude API access',
+        'Buyer + Seller lead discovery',
+        'Free listing reports',
+        'CRM integration',
+        'Dashboard access',
+        'Email support',
       ],
-      cta: 'Contact Us',
-      popular: false,
+      cta: 'Book a Demo',
+      popular: true,
     },
   ];
 
   return (
-    <section id="pricing" className="bg-[#191816] py-24">
+    <section id="pricing" className="cream-surface py-24">
       <div className="mx-auto max-w-6xl px-6">
-        {/* Header with scroll animation */}
+        {/* Setup Plans */}
         <ScrollReveal className="mb-16 text-center">
-          <span className="section-label text-xs font-semibold text-[#d8a547]">
+          <span className="section-label text-xs font-semibold text-[#7b5b1d]">
             Pricing
           </span>
-          <h2 className="mt-4 font-editorial text-4xl md:text-5xl font-bold text-white">
-            Simple, Transparent Pricing
+          <h2 className="mt-4 font-editorial text-4xl md:text-5xl font-bold text-[#191816]">
+            Setup — One-Time Fee
           </h2>
-          <p className="mt-6 text-xl text-slate-400 max-w-2xl mx-auto">
-            No hidden fees. No long-term contracts. Cancel anytime.
-          </p>
         </ScrollReveal>
 
-        {/* Pricing cards with stagger animation */}
-        <StaggerReveal className="grid md:grid-cols-3 gap-8">
-          {plans.map((plan, index) => (
+        <StaggerReveal className="grid md:grid-cols-2 gap-8 mb-20 max-w-4xl mx-auto">
+          {setupPlans.map((plan, index) => (
             <div
               key={index}
-              className={`relative bg-white rounded-2xl p-8 ${
-                plan.popular
-                  ? 'ring-2 ring-amber-400 scale-105 shadow-2xl'
-                  : 'shadow-lg'
+              className={`relative bg-white rounded-2xl p-8 shadow-lg ${
+                plan.popular ? 'ring-2 ring-[#123763] scale-105' : ''
               }`}
             >
               {plan.popular && (
-                <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-amber-400 text-slate-900 px-4 py-1 rounded-full text-sm font-bold">
-                  Most Popular
+                <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-[#123763] text-white px-4 py-1 rounded-full text-sm font-bold">
+                  Recommended
                 </div>
               )}
 
-              <div className="text-center mb-8">
-                <h3 className="text-2xl font-bold text-slate-900 mb-2">{plan.name}</h3>
-                <p className="text-slate-600 text-sm mb-4">{plan.description}</p>
-                <div className="flex items-baseline justify-center gap-1">
-                  {plan.price === 'Custom' ? (
-                    <span className="text-4xl font-bold text-slate-900">{plan.price}</span>
-                  ) : (
-                    <>
-                      <span className="text-2xl text-slate-400">$</span>
-                      <span className="text-5xl font-bold text-slate-900">{plan.price}</span>
-                    </>
-                  )}
-                  <span className="text-slate-500">{plan.period}</span>
-                </div>
+              <div className="text-center mb-6">
+                <h3 className="text-xl font-bold text-[#191816] mb-1">{plan.name}</h3>
+                <p className="text-sm text-[#5a5044] mb-4">{plan.description}</p>
+                <div className="text-4xl font-bold text-[#123763]">{plan.price}</div>
               </div>
 
-              <ul className="space-y-4 mb-8">
+              <ul className="space-y-3 mb-8">
                 {plan.features.map((feature, i) => (
                   <li key={i} className="flex items-start gap-3">
                     <svg className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                     </svg>
-                    <span className="text-slate-600">{feature}</span>
+                    <span className="text-[#3d352c]">{feature}</span>
                   </li>
                 ))}
               </ul>
 
-              <button className={`w-full py-4 rounded-xl font-semibold text-lg transition-all hover-lift ${
-                plan.popular
-                  ? 'bg-amber-500 hover:bg-amber-600 text-white shadow-lg'
-                  : 'bg-slate-900 hover:bg-slate-800 text-white'
-              }`}>
+              <a
+                href="https://calendly.com/clawops-studio/30min"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`block w-full py-4 rounded-xl font-semibold text-center transition-all hover-lift ${
+                  plan.popular
+                    ? 'bg-[#123763] hover:bg-[#0d2a4d] text-white'
+                    : 'bg-[#191816] hover:bg-[#2a2a2a] text-white'
+                }`}
+              >
                 {plan.cta}
-              </button>
+              </a>
             </div>
           ))}
         </StaggerReveal>
 
-        {/* Setup Fee Note */}
-        <ScrollReveal delay={300} className="mt-12 text-center">
-          <p className="text-slate-400">
-            One-time setup fee: <span className="text-white font-semibold">$1,500</span> (includes onboarding, training, and first 30 days of optimization)
-          </p>
+        {/* Managed Service */}
+        <ScrollReveal className="mb-12 text-center">
+          <h2 className="font-editorial text-3xl md:text-4xl font-bold text-[#191816]">
+            Managed Service
+          </h2>
+          <p className="mt-4 text-xl text-[#5a5044]">Everything you need, every month</p>
+        </ScrollReveal>
+
+        <ScrollReveal className="max-w-3xl mx-auto">
+          <div className="bg-[#123763] rounded-2xl p-8 md:p-12 text-white">
+            <div className="text-center mb-8">
+              <h3 className="text-2xl font-bold mb-2">Managed Service</h3>
+              <div className="flex items-baseline justify-center gap-1">
+                <span className="text-4xl font-bold">$399</span>
+                <span className="text-blue-200">/month</span>
+              </div>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-4 mb-8">
+              {managedPlans[0].features.map((feature, i) => (
+                <div key={i} className="flex items-start gap-3">
+                  <svg className="w-5 h-5 text-[#d8a547] flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span className="text-blue-100">{feature}</span>
+                </div>
+              ))}
+            </div>
+
+            <a
+              href="https://calendly.com/clawops-studio/30min"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block w-full py-4 rounded-xl font-semibold text-center bg-[#d8a547] hover:bg-[#c49537] text-[#191816] transition-all hover-lift"
+            >
+              Book a Demo
+            </a>
+          </div>
+        </ScrollReveal>
+
+        {/* Voice AI Add-on */}
+        <ScrollReveal delay={200} className="mt-12 text-center">
+          <div className="inline-block bg-[#fffaf0] border border-[#d8a547] rounded-2xl px-8 py-6">
+            <h3 className="text-xl font-bold text-[#191816] mb-2">Voice AI Add-On</h3>
+            <p className="text-[#5a5044] mb-4">Want AI calling? We connect your agents to Vapi. Contact us to get started.</p>
+            <a
+              href="https://calendly.com/clawops-studio/30min"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 bg-[#123763] hover:bg-[#0d2a4d] text-white px-6 py-3 rounded-xl font-semibold transition-all"
+            >
+              Contact Us
+            </a>
+          </div>
         </ScrollReveal>
       </div>
     </section>

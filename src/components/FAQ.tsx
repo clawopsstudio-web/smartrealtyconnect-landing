@@ -8,56 +8,52 @@ export default function FAQ() {
 
   const faqs = [
     {
-      question: 'How is this different from other lead gen services?',
-      answer: 'Most lead gen services sell you the same leads they sell to every other agent. We use AI to find motivated buyers and sellers who haven\'t talked to any other agents yet — and we protect your territory so we won\'t sell them to your competitors.',
+      question: 'Do I need technical skills?',
+      answer: 'No. We set everything up and manage the tech. You just use your dashboard and receive leads via email.',
     },
     {
-      question: 'What if I don\'t get any good leads?',
-      answer: 'We qualify every lead before sending it to you. If a lead doesn\'t meet our criteria (motivated, timeline, budget), we don\'t send it. Our goal is quality over quantity. If you\'re not satisfied, we\'ll work with you to optimize your targeting.',
+      question: 'Who owns my data?',
+      answer: 'You do. Each client is on their own VPS and database. We never share data between clients.',
     },
     {
-      question: 'How quickly will I see results?',
-      answer: 'Most agents see their first qualified lead within 7-14 days. By day 30, you should have a clear picture of what\'s working. We provide weekly reports so you can track progress and optimize.',
+      question: 'Is this compliant?',
+      answer: 'Yes. Every outreach script includes compliance notes. All outreach goes through a human approval gate. Fully TCPA and Fair Housing safe.',
+    },
+    {
+      question: 'How do I get started?',
+      answer: 'Book a demo call. We\'ll walk you through the system and generate a free listing report from one of your active listings.',
     },
     {
       question: 'Can I cancel anytime?',
-      answer: 'Yes. Month-to-month, no long-term contracts. Cancel before your next billing date and you won\'t be charged again. We don\'t lock you in because we\'re confident in our results.',
-    },
-    {
-      question: 'What areas do you cover?',
-      answer: 'We can find leads in any US market. The more specific your target area, the better our AI can focus. We recommend starting with 2-3 zip codes or neighborhoods for best results.',
-    },
-    {
-      question: 'Do you handle the outreach, or do I have to follow up?',
-      answer: 'We handle the initial outreach via email and SMS. We warm up the lead so they\'re expecting your call. You handle the consultation and close — the part that actually makes you money.',
+      answer: 'Yes. Month-to-month after your setup period. No long-term contracts.',
     },
   ];
 
   return (
-    <section id="faq" className="cream-surface py-24">
+    <section id="faq" className="bg-[#123763] py-24">
       <div className="mx-auto max-w-3xl px-6">
-        {/* Header with scroll animation */}
+        {/* Header */}
         <ScrollReveal className="mb-16 text-center">
-          <span className="section-label text-xs font-semibold text-[#7b5b1d]">
+          <span className="section-label text-xs font-semibold text-[#d8a547]">
             FAQ
           </span>
-          <h2 className="mt-4 font-editorial text-4xl md:text-5xl font-bold text-[#191816]">
-            Questions?<br />We've Got Answers.
+          <h2 className="mt-4 font-editorial text-4xl md:text-5xl font-bold text-white">
+            Questions?
           </h2>
         </ScrollReveal>
 
-        {/* FAQ Accordion with stagger animation */}
+        {/* FAQ Accordion */}
         <div className="space-y-4">
           {faqs.map((faq, index) => (
             <ScrollReveal key={index} delay={index * 100}>
-              <div className="border border-slate-200 rounded-xl overflow-hidden">
+              <div className="bg-white/10 backdrop-blur rounded-xl overflow-hidden border border-white/20">
                 <button
                   onClick={() => setOpenIndex(openIndex === index ? null : index)}
-                  className="w-full flex items-center justify-between p-6 text-left hover:bg-slate-50 transition-colors"
+                  className="w-full flex items-center justify-between p-6 text-left hover:bg-white/5 transition-colors"
                 >
-                  <span className="font-semibold text-slate-900 pr-4">{faq.question}</span>
+                  <span className="font-semibold text-white pr-4">{faq.question}</span>
                   <svg
-                    className={`w-5 h-5 text-slate-400 flex-shrink-0 transition-transform ${openIndex === index ? 'rotate-180' : ''}`}
+                    className={`w-5 h-5 text-[#d8a547] flex-shrink-0 transition-transform ${openIndex === index ? 'rotate-180' : ''}`}
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -67,7 +63,7 @@ export default function FAQ() {
                 </button>
                 {openIndex === index && (
                   <div className="px-6 pb-6">
-                    <p className="text-slate-600 leading-relaxed">{faq.answer}</p>
+                    <p className="text-blue-100 leading-relaxed">{faq.answer}</p>
                   </div>
                 )}
               </div>
@@ -75,13 +71,19 @@ export default function FAQ() {
           ))}
         </div>
 
+        {/* CTA */}
         <ScrollReveal delay={300} className="mt-12 text-center">
-          <p className="text-slate-600">
-            Still have questions?{' '}
-            <a href="#book" className="text-blue-600 font-semibold hover:underline">
-              Book a call and we'll answer them all.
-            </a>
+          <p className="text-blue-100 mb-6">
+            Still have questions?
           </p>
+          <a
+            href="https://calendly.com/clawops-studio/30min"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 bg-[#d8a547] hover:bg-[#c49537] text-[#191816] px-8 py-4 rounded-xl font-semibold transition-all hover-lift"
+          >
+            Book a Demo
+          </a>
         </ScrollReveal>
       </div>
     </section>
